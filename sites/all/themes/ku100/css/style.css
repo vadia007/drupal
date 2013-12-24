@@ -71,7 +71,7 @@ div#nav ul li a{
     line-height: 48px;
     display: block;
     padding: 4px 18px 0 18px;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -138,7 +138,7 @@ div#content .toboggan-unified #login-form{
     margin-left: 10px;
 }
 .toboggan-unified label{
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     text-align: center;
 }
@@ -179,23 +179,23 @@ input[type="submit"]{
     height: 60px;
     width: 360px;
     margin: 0;
-    font-size: 16px;
+    font-size: 19px;
     text-transform: uppercase;
 }
 .toboggan-unified div.login-forgot a{
     padding-left: 16px;
-    font-size: 10px;
+    font-size: 12px;
 }
 .toboggan-unified a#register-link{
     background: url("../images/button_sign.png") no-repeat;
     display: block;
     color: #fff;
     border: 0;
-    height: 40px;
-    width: 240px;
+    height: 42px;
+    width: 248px;
     margin: 0;
-    font-size: 16px;
-    padding: 20px 0 0 120px;
+    font-size: 19px;
+    padding: 18px 0 0 112px;
     text-transform: uppercase;
     margin: 0 auto;
 }
@@ -205,20 +205,25 @@ div.toboggan-unified div#login-message{
     width: 100%;
     margin-bottom: 23px;
     text-transform: uppercase;
-    font-size: 21px;
+    font-size: 26px;
 }
 div.form-type-textfield label,
 div.form-type-password label{
     margin: 10px 0;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
+    font-weight: normal;
 }
-input[type="text"],input[type="password"]{
+div.toboggan-unified input[type="text"],
+div.toboggan-unified input[type="password"],
+div.toboggan-unified input[type="email"],
+form#user-pass input[type="text"]{
     border: 2px;
-    background: #fff;
-    box-shadow: inset 2px 2px 4px 1px  #3b3b3b;
-    -moz-box-shadow: inset 2px 2px 4px 1px  #3b3b3b;
-    -webkit-box-shadow:inset 2px 2px 4px 1px  #3b3b3b;
+    /*background: #fff;*/
+    /*box-shadow: inset 2px 2px 4px 1px  #3b3b3b;*/
+    /*-moz-box-shadow: inset 2px 2px 4px 1px  #3b3b3b;*/
+    /*-webkit-box-shadow:inset 2px 2px 4px 1px  #3b3b3b;*/
+    background: url("../images/input_reg.png") no-repeat;
     height: 23px;
     /*filter:*/
     /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=45,strength=5)*/
@@ -238,7 +243,7 @@ div.toboggan-unified form#user-register-form{
     text-align: center;
 }
 div.toboggan-unified form#user-register-form .form-type-password{
-width: 100%;
+    width: 100%;
 }
 div.password-confirm, div.password-strength{
     width: 272px;
@@ -251,4 +256,49 @@ div#content div.toboggan-unified a.lt-active{
 div.password-suggestions{
     text-align: left;
     margin-left: 36%;
+}
+form.webform-client-form{
+    margin: 0 auto;
+    text-align: center;
+}
+
+form.webform-client-form input[type="text"], form.webform-client-form input[type="email"]{
+    width: 440px;
+}
+form.webform-client-form label{
+    display: block;
+    width: 440px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 20px auto 10px auto;
+}
+form.webform-client-form input[type="submit"]{
+    background: url("../images/button_rev.png") no-repeat;
+    font-size: 24px;
+    height: 71px;
+    padding-bottom: 6px;
+    width: 472px;
+}
+div.register div#login-message{
+    display: none;
+}
+div.register{
+    margin-top: 50px;
+}
+input[type="text"],input[type="email"]{
+    background: url("../images/input.png") no-repeat top left;
+    height: 30px;
+    border: 2px;
+    font-size: 15px;
+}
+textarea{
+    background: url("../images/textarea.png") no-repeat top left;
+    border: 2px;
+    height: 198px;
+    font-size: 15px;
+    padding-top: 5px;
+    resize: none;
+    width: 440px;
 }

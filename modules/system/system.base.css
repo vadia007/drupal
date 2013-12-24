@@ -66,12 +66,7 @@ fieldset.collapsible .fieldset-legend {
  * @see textarea.js
  */
 .form-textarea-wrapper textarea {
-  display: block;
-  margin: 0;
-  width: 100%;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+
 }
 .resizable-textarea .grippie {
   background: #eee url(../../misc/grippie.png) no-repeat center 2px;
