@@ -70,8 +70,7 @@ td.active {
  */
 .form-item,
 .form-actions {
-  margin-top: 1em;
-  margin-bottom: 1em;
+
 }
 tr.odd .form-item,
 tr.even .form-item {

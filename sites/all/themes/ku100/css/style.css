@@ -1,0 +1,254 @@
+
+/* ---------- Overall Specifications ---------- */
+html{
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background-color: #c0c0c0;
+    height: 100%;
+    font-family: Arial;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #000;
+}
+a,
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+}
+h1{
+    color: #B9B9B8;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+}
+#page-wrapper{
+    background: url("../images/backgraund.png") no-repeat top center;
+    margin:0 auto;
+    width: 1200px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#header{
+    background: url("../images/header.png") no-repeat;
+    height: 76px;
+    padding-bottom: 25px;
+}
+a#logo{
+    display: block;
+    margin-left: 50px;
+    width: 238px;
+    padding: 13px 0;
+}
+div#nav{
+    position: absolute;
+    left: 30px;
+    top: 64px;
+}
+div#nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+div#nav ul li{
+    display: block;
+    float: left;
+
+}
+div#nav ul li a{
+    line-height: 48px;
+    display: block;
+    padding: 4px 18px 0 18px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+div#nav ul li a.active{
+    background: url("../images/button.png") repeat-x;
+    color: #fff;
+}
+div#main{
+    background: url("../images/main.png") 0 0 no-repeat;
+    width: 930px;
+    height: 520px;
+    margin-left: 30px;
+    margin-top: -25px;
+}
+.empty {
+    height:116px;
+}
+div#footer{
+    background: url("../images/footer.png");
+    width: 1200px;
+    height: 116px;
+    padding-top: 8px;
+    margin: -116px auto 0 auto;
+    position: relative;
+
+
+}
+div#footer a#katalog{
+    background: url("../images/button_kat.png") no-repeat;
+    display: block;
+    height: 100px;
+    margin-left: 19px;
+    font-size: 46px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 0 0 290px;
+    color: #fff;
+    width: 567px;
+    float: left;
+}
+div#footer a#sign_in{
+    background: url("../images/button_signin.png") no-repeat;
+    width: 280px;
+    height: 70px;
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    padding: 25px 0 0 40px;
+    margin-top: 8px;
+}
+div#content{
+    padding: 0 28px;
+    min-heigh: 100%;
+}
+div#content .toboggan-unified #login-form{
+    margin: 0 auto;
+    width: 360px;
+    padding: 0 20px;
+}
+.toboggan-unified input{
+    width: 335px;
+    margin-left: 10px;
+}
+.toboggan-unified label{
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+div.form-item-remember-me{
+    padding-left: 11px;
+    margin-top: 10px;
+}
+.toboggan-unified .form-item-remember-me label{
+    text-transform: none;
+    margin-left: 15px;
+}
+.toboggan-unified input[type="checkbox"]{
+    display: none;
+    /*display: block;*/
+    width: 19px;
+    height: 23px;
+    padding: 0 5px 0 0;
+    font: 12px/21px arial,sans-serif;
+    background: url("../images/uncheck.png") no-repeat;
+    /*display: block;*/
+    clear: left;
+    float: left;
+}
+.checkbox {
+    width: 19px;
+    height: 23px;
+    padding: 0 5px 0 0;
+    background: url("../images/checkbox.png") no-repeat;
+    display: block;
+    clear: left;
+    float: left;
+}
+
+input[type="submit"]{
+    background: url("../images/button_sign.png") no-repeat;
+    color: #fff;
+    border: 0;
+    height: 60px;
+    width: 360px;
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.toboggan-unified div.login-forgot a{
+    padding-left: 16px;
+    font-size: 10px;
+}
+.toboggan-unified a#register-link{
+    background: url("../images/button_sign.png") no-repeat;
+    display: block;
+    color: #fff;
+    border: 0;
+    height: 40px;
+    width: 240px;
+    margin: 0;
+    font-size: 16px;
+    padding: 20px 0 0 120px;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+div.toboggan-unified div#login-message{
+    color: #b9b9b8;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 23px;
+    text-transform: uppercase;
+    font-size: 21px;
+}
+div.form-type-textfield label,
+div.form-type-password label{
+    margin: 10px 0;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+input[type="text"],input[type="password"]{
+    border: 2px;
+    background: #fff;
+    box-shadow: inset 2px 2px 4px 1px  #3b3b3b;
+    -moz-box-shadow: inset 2px 2px 4px 1px  #3b3b3b;
+    -webkit-box-shadow:inset 2px 2px 4px 1px  #3b3b3b;
+    height: 23px;
+    /*filter:*/
+    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=45,strength=5)*/
+    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=135,strength=5)*/
+    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=225,strength=5)*/
+    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=315,strength=5);*/
+
+}
+form#user-pass div.form-type-textfield{
+    width: 360px;
+    text-align: center;
+}
+form#user-pass div.form-type-textfield input{
+    width: 360px;
+}
+div.toboggan-unified form#user-register-form{
+    text-align: center;
+}
+div.toboggan-unified form#user-register-form .form-type-password{
+width: 100%;
+}
+div.password-confirm, div.password-strength{
+    width: 272px;
+    position: absolute;
+    right: 50px;
+}
+div#content div.toboggan-unified a.lt-active{
+    display: none;
+}
+div.password-suggestions{
+    text-align: left;
+    margin-left: 36%;
+}

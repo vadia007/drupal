@@ -63,10 +63,7 @@ div.password-confirm {
   width: 17em;
 }
 div.form-item div.password-suggestions {
-  padding: 0.2em 0.5em;
-  margin: 0.7em 0;
-  width: 38.5em;
-  border: 1px solid #B4B4B4;
+
 }
 div.password-suggestions ul {
   margin-bottom: 0;

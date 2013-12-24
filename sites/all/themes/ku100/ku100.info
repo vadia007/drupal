@@ -1,0 +1,24 @@
+
+name = Ku100
+description = A flexible, recolorable theme with many regions.
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/style.css
+
+regions[header] = Header
+regions[help] = Help
+regions[nav] = Navigation
+regions[content] = Content
+regions[footer] = Footer
+
+settings[shortcut_module_link] = 0
+
+scripts[] = js/checkbox.js
+
+; Information added by  packaging script on 2013-11-20
+version = "7.24"
+project = "drupal"
+datestamp = "1384983240"
+
