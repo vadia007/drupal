@@ -1,0 +1,30 @@
+body div#nav ul li a{
+    font-size: 17px;
+}
+
+body a.support,
+body a.about{
+
+}
+body div#footer a#sign_in{
+    padding-left: 32px;
+    padding-top: 24px;
+    font-size: 23px;
+}
+body a.support{
+    font-size: 23px;
+    padding-left: 32px;
+    padding-top: 24px;
+}
+body a.about{
+    font-size: 23px;
+}
+input[type="submit"]{
+    font-size: 23px;
+}
+body .toboggan-unified a#register-link{
+    font-size: 23px;
+    padding-top: 20px;
+    padding-left: 107px;
+    width: 257px
+}

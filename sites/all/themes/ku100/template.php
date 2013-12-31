@@ -154,3 +154,6 @@ function bartik_field__taxonomy_term_reference($variables) {
 
   return $output;
 }
+function ku100_preprocess_html(&$vars) {
+    drupal_add_css(path_to_theme() . '/css/ie8.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'gte IE 7', '!IE' => FALSE), 'preprocess' => FALSE));
+}

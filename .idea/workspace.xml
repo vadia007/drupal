@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7cfec87-b35e-470a-96cc-e1ab031c9977" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_kat.png" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_kat.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_sign.png" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_sign.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/system/system.base.css" afterPath="$PROJECT_DIR$/modules/system/system.base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robots.txt" afterPath="$PROJECT_DIR$/robots.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/ku100.info" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/ku100.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/template.php" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" />
     </list>
     <ignored path="drupal.loc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,19 +30,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="281" column="17" selection-start="6143" selection-end="6143" vertical-scroll-proportion="0.6268657">
+            <state line="390" column="1" selection-start="8957" selection-end="8957" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/template.php">
+      <file leaf-file-name="checkbox.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="0" selection-start="5916" selection-end="5916" vertical-scroll-proportion="-20.875">
+            <state line="43" column="1" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1388356209293" expanded="true" signature="1433:1451" placeholder="{...}" />
+                <marker date="1388356209293" expanded="true" signature="1473:1501" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ie8.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/ie8.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="14" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -54,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.tpl.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="page.tpl.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="0" selection-start="6939" selection-end="6939" vertical-scroll-proportion="0.0">
+            <state line="175" column="23" selection-start="6953" selection-end="6953" vertical-scroll-proportion="2.139576">
               <folding />
             </state>
           </provider>
@@ -79,12 +98,16 @@
         <option value="$PROJECT_DIR$/sites/all/themes/ku100/color/color.inc" />
         <option value="$PROJECT_DIR$/modules/system/system.theme.css" />
         <option value="$PROJECT_DIR$/modules/user/user.css" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.module" />
         <option value="$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.unifiedlogin.js" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/template.php" />
         <option value="$PROJECT_DIR$/modules/system/system.base.css" />
+        <option value="$PROJECT_DIR$/robots.txt" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ku100/ku100.info" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ku100/template.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ku100/css/ie8.css" />
         <option value="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js" />
       </list>
     </option>
   </component>
@@ -121,6 +144,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,7 +281,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -283,46 +307,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drupal.loc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drupal.loc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drupal.loc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drupal.loc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test.loc" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+  </component>
+  <component name="PublishConfig" serverName="ky100" serverId="3396b7db-8296-4d56-8043-20e3dd2b4317">
+    <servers>
+      <server id="3396b7db-8296-4d56-8043-20e3dd2b4317">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -330,6 +337,9 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="3396b7db-8296-4d56-8043-20e3dd2b4317" server_name="ky100">
       <method />
     </configuration>
     <list size="0" />
@@ -347,16 +357,18 @@
     <frame x="-2" y="25" width="1284" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2617504" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25202593" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -421,37 +433,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="28" selection-start="1926" selection-end="1926" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="0" selection-start="5916" selection-end="5916" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1266" column="43" selection-start="48464" selection-end="48464" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1387878409827" expanded="true" signature="1794:1895" placeholder="..." />
-            <marker date="1387878409827" expanded="true" signature="1899:3155" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="0" selection-start="6939" selection-end="6939" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="44" selection-start="1559" selection-end="1559" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -481,16 +462,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.unifiedlogin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="0" selection-end="1066" vertical-scroll-proportion="0.3181818">
-          <folding />
-        </state>
+        <state line="12" column="17" selection-start="0" selection-end="1066" vertical-scroll-proportion="0.3181818" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php">
+    <entry file="file://$PROJECT_DIR$/modules/system/system.base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="0" selection-start="6939" selection-end="6939" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="68" column="0" selection-start="1142" selection-end="1142" vertical-scroll-proportion="-0.47263682" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="622" selection-end="622" vertical-scroll-proportion="0.024875622" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="14" selection-start="5781" selection-end="5821" vertical-scroll-proportion="0.58303887" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="1" selection-start="6122" selection-end="6122" vertical-scroll-proportion="-19.833334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.module">
@@ -503,23 +495,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/template.php">
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="0" selection-start="5916" selection-end="5916" vertical-scroll-proportion="-20.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/system/system.base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="1142" selection-end="1142" vertical-scroll-proportion="-0.47263682">
-          <folding />
+        <state line="43" column="1" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1388356209293" expanded="true" signature="1433:1451" placeholder="{...}" />
+            <marker date="1388356209293" expanded="true" signature="1473:1501" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="281" column="17" selection-start="6143" selection-end="6143" vertical-scroll-proportion="0.6268657">
+        <state line="390" column="1" selection-start="8957" selection-end="8957" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/ku100.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="304" selection-end="304" vertical-scroll-proportion="0.3482587">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/ie8.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="14" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="23" selection-start="6953" selection-end="6953" vertical-scroll-proportion="2.139576">
           <folding />
         </state>
       </provider>

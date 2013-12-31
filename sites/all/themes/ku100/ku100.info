@@ -12,6 +12,7 @@ regions[help] = Help
 regions[nav] = Navigation
 regions[content] = Content
 regions[footer] = Footer
+regions[video] = Video
 
 settings[shortcut_module_link] = 0
 

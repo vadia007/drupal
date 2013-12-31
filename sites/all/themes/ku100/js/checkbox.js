@@ -37,8 +37,11 @@
 var checkboxHeight = "23";
 var radioHeight = "25";
 var selectWidth = "190";
+var ua = navigator.userAgent;
 
-
+if (ua.search(/MSIE/) > 0){
+    checkboxHeight = "21"
+}
 /* No need to change anything after this */
 
 

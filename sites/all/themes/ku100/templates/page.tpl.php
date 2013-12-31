@@ -137,12 +137,17 @@
 
     <?php if ($is_front): ?>
     <div id="main">
-
-    </div>
+    <div id="main_img"></div>
+    <div id="sidebar_r">
+        <?php print render($page['video']); ?>
+        <a class="about" href="#"><?php print t('О нас');?></a>
+        <a class="support" href="#"><?php print t('Служба поддержки');?></a>
+    </div></div>
     <?php endif; ?>
 
     <?php if (!$is_front): ?>
     <div id="content" class="column">
+
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>
@@ -172,8 +177,8 @@
 </div> <!-- /#page-wrapper -->
 <div id="footer" >
     <?php if ($is_front): ?>
-    <a id="katalog" href="#">Каталог</a>
-    <a id="sign_in" href="user/login">Вход / Регистрация</a>
+    <a id="katalog" href="#"><?php print t('Каталог');?></a>
+    <a id="sign_in" href="user/login"><?php print t('Вход / Регистрация');?></a>
     <?php endif; ?>
 
 </div><!-- /#footer -->

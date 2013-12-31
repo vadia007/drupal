@@ -23,6 +23,36 @@ a:active,
 a:focus {
     text-decoration: none;
 }
+@font-face {
+    font-family: 'a_futuricabookregular';
+    src: url('../fonts/a-futuricabook.eot');
+    src: url('../fonts/a-futuricabook.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/a-futuricabook.woff') format('woff'),
+    url('../fonts/a-futuricabook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'StandardPosterCTTRegular';
+    src: url('../fonts/standardposterctt.eot');
+    src: url('../fonts/standardposterctt.eot') format('embedded-opentype'),
+    url('../fonts/standardposterctt.woff') format('woff'),
+    url('../fonts/standardposterctt.ttf') format('truetype'),
+    url('../fonts/standardposterctt.svg#StandardPosterCTTRegular') format('svg');
+}
+@font-face {
+    font-family: 'MyriadProRegular';
+    src: url('../fonts/myriadpro-regular.eot');
+    src: url('../fonts/myriadpro-regular.eot') format('embedded-opentype'),
+    url('../fonts/myriadpro-regular.woff') format('woff'),
+    url('../fonts/myriadpro-regular.ttf') format('truetype'),
+    url('../fonts/myriadpro-regular.svg#MyriadProRegular') format('svg');
+}
+
+
 h1{
     color: #B9B9B8;
 }
@@ -71,20 +101,34 @@ div#nav ul li a{
     line-height: 48px;
     display: block;
     padding: 4px 18px 0 18px;
-    font-size: 14px;
+    font-size: 18px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-family: MyriadProRegular;
 }
 div#nav ul li a.active{
     background: url("../images/button.png") repeat-x;
     color: #fff;
 }
 div#main{
+    min-height: 100%;
+    width: 100%;
+    height: 500px;
+}
+div#main_img{
     background: url("../images/main.png") 0 0 no-repeat;
-    width: 930px;
+    width: 825px;
     height: 520px;
     margin-left: 30px;
     margin-top: -25px;
+    float: left;
+
+}
+div#sidebar_r{
+    float: left;
+    margin-left: 12px;
+    width: 305px;
+    height: 270px;
+    margin-top: -11px;
 }
 .empty {
     height:116px;
@@ -103,14 +147,15 @@ div#footer a#katalog{
     background: url("../images/button_kat.png") no-repeat;
     display: block;
     height: 100px;
-    margin-left: 19px;
-    font-size: 46px;
+    margin-left: 17px;
+    font-size: 63px;
     text-transform: uppercase;
-    font-weight: bold;
-    padding: 15px 0 0 290px;
+    /*font-weight: bold;*/
+    padding: 15px 0 0 260px;
     color: #fff;
-    width: 567px;
+    width: 593px;
     float: left;
+    font-family: StandardPosterCTTRegular;
 }
 div#footer a#sign_in{
     background: url("../images/button_signin.png") no-repeat;
@@ -119,10 +164,11 @@ div#footer a#sign_in{
     display: block;
     float: left;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 24px;
     color: #fff;
-    padding: 25px 0 0 40px;
+    padding: 21px 0 0 40px;
     margin-top: 8px;
+    font-family: a_futuricabookregular;
 }
 div#content{
     padding: 0 28px;
@@ -135,7 +181,10 @@ div#content .toboggan-unified #login-form{
 }
 .toboggan-unified input{
     width: 335px;
-    margin-left: 10px;
+    margin-left: 12px;
+}
+.toboggan-unified #user-register-form input{
+    margin-left: 0;
 }
 .toboggan-unified label{
     font-size: 12px;
@@ -143,7 +192,7 @@ div#content .toboggan-unified #login-form{
     text-align: center;
 }
 div.form-item-remember-me{
-    padding-left: 11px;
+    padding-left: 13px;
     margin-top: 10px;
 }
 .toboggan-unified .form-item-remember-me label{
@@ -164,7 +213,7 @@ div.form-item-remember-me{
 }
 .checkbox {
     width: 19px;
-    height: 23px;
+    height: 21px;
     padding: 0 5px 0 0;
     background: url("../images/checkbox.png") no-repeat;
     display: block;
@@ -176,11 +225,13 @@ input[type="submit"]{
     background: url("../images/button_sign.png") no-repeat;
     color: #fff;
     border: 0;
-    height: 60px;
-    width: 360px;
+    height: 68px;
+    width: 364px;
     margin: 0;
-    font-size: 19px;
+    font-size: 24px;
     text-transform: uppercase;
+    font-family: a_futuricabookregular;
+    margin-left: -2px;
 }
 .toboggan-unified div.login-forgot a{
     padding-left: 16px;
@@ -191,13 +242,14 @@ input[type="submit"]{
     display: block;
     color: #fff;
     border: 0;
-    height: 42px;
-    width: 248px;
+    height: 52px;
+    width: 252px;
     margin: 0;
-    font-size: 19px;
+    font-size: 24px;
     padding: 18px 0 0 112px;
     text-transform: uppercase;
     margin: 0 auto;
+    font-family: a_futuricabookregular;
 }
 div.toboggan-unified div#login-message{
     color: #b9b9b8;
@@ -205,12 +257,12 @@ div.toboggan-unified div#login-message{
     width: 100%;
     margin-bottom: 23px;
     text-transform: uppercase;
-    font-size: 26px;
+    font-size: 30px;
 }
 div.form-type-textfield label,
 div.form-type-password label{
     margin: 10px 0;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: normal;
 }
@@ -301,4 +353,39 @@ textarea{
     padding-top: 5px;
     resize: none;
     width: 440px;
+}
+body.page-node-1 h1#page-title{
+    display: none;
+}
+body.page-node-1 div#content{
+    margin-top: 50px;
+    text-align: center;
+}
+a.about{
+    background: url("../images/button_signin.png") no-repeat;
+    width: 198px;
+    height: 63px;
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+    padding: 22px 0 0 117px;
+    font-family: a_futuricabookregular;
+}
+a.support{
+    background: url("../images/button_signin.png") no-repeat;
+    width: 280px;
+    height: 64px;
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+    padding: 21px 0 0 35px;
+    font-family: a_futuricabookregular;
+
+}
+form#user-login span.checkbox{
+    /*background-position: 0 2px!important;*/
 }
