@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7cfec87-b35e-470a-96cc-e1ab031c9977" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_kat.png" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_kat.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_sign.png" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_sign.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robots.txt" afterPath="$PROJECT_DIR$/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/ku100.info" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/ku100.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/template.php" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" />
-    </list>
+    <list default="true" id="e7cfec87-b35e-470a-96cc-e1ab031c9977" name="Default" comment="" />
     <ignored path="drupal.loc.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,7 +34,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="43" column="1" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <marker date="1388356209293" expanded="true" signature="1433:1451" placeholder="{...}" />
                 <marker date="1388356209293" expanded="true" signature="1473:1501" placeholder="{...}" />
               </folding>
@@ -76,7 +65,7 @@
       <file leaf-file-name="page.tpl.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="23" selection-start="6953" selection-end="6953" vertical-scroll-proportion="2.139576">
+            <state line="175" column="23" selection-start="6953" selection-end="6953" vertical-scroll-proportion="2.2256267">
               <folding />
             </state>
           </provider>
@@ -91,6 +80,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -313,10 +305,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test.loc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
@@ -355,19 +347,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="25" width="1284" height="777" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25202593" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2560778" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -499,7 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="1" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <marker date="1388356209293" expanded="true" signature="1433:1451" placeholder="{...}" />
             <marker date="1388356209293" expanded="true" signature="1473:1501" placeholder="{...}" />
           </folding>
@@ -515,9 +506,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/ku100.info">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="22" selection-start="304" selection-end="304" vertical-scroll-proportion="0.3482587">
-          <folding />
-        </state>
+        <state line="14" column="22" selection-start="304" selection-end="304" vertical-scroll-proportion="0.3482587" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/ie8.css">
@@ -529,7 +518,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="23" selection-start="6953" selection-end="6953" vertical-scroll-proportion="2.139576">
+        <state line="175" column="23" selection-start="6953" selection-end="6953" vertical-scroll-proportion="2.2256267">
           <folding />
         </state>
       </provider>
