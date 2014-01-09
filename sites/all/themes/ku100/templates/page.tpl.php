@@ -177,7 +177,7 @@
 </div> <!-- /#page-wrapper -->
 <div id="footer" >
     <?php if ($is_front): ?>
-    <a id="katalog" href="#"><?php print t('Каталог');?></a>
+    <a id="catalog" href="catalog"><?php print t('Каталог');?></a>
     <a id="sign_in" href="user/login"><?php print t('Вход / Регистрация');?></a>
     <?php endif; ?>
 

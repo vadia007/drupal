@@ -143,7 +143,7 @@ div#footer{
 
 
 }
-div#footer a#katalog{
+div#footer a#catalog{
     background: url("../images/button_kat.png") no-repeat;
     display: block;
     height: 100px;
@@ -388,4 +388,22 @@ a.support{
 }
 form#user-login span.checkbox{
     /*background-position: 0 2px!important;*/
+}
+
+div.view-display-id-catalog_parent div.views-field-field-term-image{
+    float: left;
+    width: 63px;
+    padding-top: 5px;
+}
+div.view-display-id-catalog_parent div.views-field-name{
+    width: 219px;
+    font-size: 12px;
+    font-family: arial;
+    text-transform: uppercase;
+    height: 60px;
+    display: table-cell;
+    vertical-align: middle;
+}
+div.view-display-id-catalog_parent table{
+    width: 100%;
 }
