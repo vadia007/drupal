@@ -4,8 +4,6 @@
     <list default="true" id="e7cfec87-b35e-470a-96cc-e1ab031c9977" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/localhost-2013-12-24T22-37-39.mysql.gz" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" />
     </list>
     <ignored path="drupal.loc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +31,7 @@
       <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="396" column="1" selection-start="9085" selection-end="9085" vertical-scroll-proportion="0.84090906">
+            <state line="396" column="1" selection-start="9085" selection-end="9085" vertical-scroll-proportion="0.56882256">
               <folding />
             </state>
           </provider>
@@ -266,10 +264,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test.loc" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
@@ -346,14 +344,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="25" width="1284" height="777" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2560778" sideWeight="0.32591414" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6709062" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26418152" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26904377" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -512,7 +510,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ku100/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="396" column="1" selection-start="9085" selection-end="9085" vertical-scroll-proportion="0.84090906">
+        <state line="396" column="1" selection-start="9085" selection-end="9085" vertical-scroll-proportion="0.56882256">
           <folding />
         </state>
       </provider>
