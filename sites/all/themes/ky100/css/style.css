@@ -407,3 +407,109 @@ div.view-display-id-catalog_parent div.views-field-name{
 div.view-display-id-catalog_parent table{
     width: 100%;
 }
+div.view-display-id-catalog_child{
+    width: 620px;
+    float: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 20px;
+    font-family: arial;
+    margin-left: 57px;
+}
+div#block-catalog-form-catalog-form{
+    float: right;
+    width: 457px;
+    height: 650px;
+}
+div#block-ky100-term-parent{
+    width: 670px;
+    float: left;
+    margin-bottom: 10px;
+}
+div#block-ky100-term-parent div#parent{
+    display: table;
+    height: 55px;
+}
+div#block-ky100-term-parent img{
+    float: left;
+}
+
+div#block-ky100-term-parent span{
+    display: table-cell;
+    vertical-align: middle;
+    width: 220px;
+    margin-left: 10px;
+    padding-left: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+div.view-display-id-catalog_child td{
+    width: 50%;
+}
+div.view-display-id-catalog_child td:hover{
+    background: #a5a5a5;
+}
+div.view-display-id-catalog_child td a{
+    display: block;
+}
+div.view-display-id-catalog_child table{
+    width: 100%;
+}
+div#block-catalog-form-catalog-form div.form-type-textfield label,
+div#block-catalog-form-catalog-form div.form-type-textarea label{
+    display: none;
+}
+div#block-catalog-form-catalog-form div.form-item-time label{
+    display: inline;
+    padding: 0 10px 0 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+
+}
+div#block-catalog-form-catalog-form div.form-type-textfield,
+div#block-catalog-form-catalog-form div.form-type-textarea{
+    margin-bottom: 5px;
+}
+div#block-catalog-form-catalog-form input[type='text']{
+    width: 420px;
+    height: 32px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 4px 15px 0 15px;
+}
+div#block-catalog-form-catalog-form textarea{
+    width: 420px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 10px 15px 0 15px;
+    height: 130px;
+}
+div#block-catalog-form-catalog-form div.form-item-time input[type='text']{
+    width: 25px;
+}
+div#block-catalog-form-catalog-form div.form-item-time{
+    width: 270px;
+    float: left;
+}
+div.hour{
+    width: 180px;
+    float: left;
+    height: 31px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-top: 12px;
+}
+div#block-catalog-form-catalog-form div.form-type-checkbox{
+    font-size: 12px;
+    line-height: 22px;
+    padding: 4px 0 4px 7px;
+}
+div#block-catalog-form-catalog-form div.form-type-checkbox label{
+    padding-left: 10px;
+}
+div#block-catalog-form-catalog-form input[type='submit']{
+    background: url("../images/button_cat_form.png") no-repeat;
+    width: 175px;
+    margin-left: 135px;
+}

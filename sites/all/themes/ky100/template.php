@@ -84,7 +84,7 @@ function bartik_preprocess_maintenance_page(&$variables) {
   if (!$variables['db_is_active']) {
     $variables['site_name'] = '';
   }
-  drupal_add_css(drupal_get_path('theme', 'ku100') . '/css/maintenance-page.css');
+  drupal_add_css(drupal_get_path('theme', 'ky100') . '/css/maintenance-page.css');
 }
 
 /**
@@ -154,6 +154,6 @@ function bartik_field__taxonomy_term_reference($variables) {
 
   return $output;
 }
-function ku100_preprocess_html(&$vars) {
+function ky100_preprocess_html(&$vars) {
     drupal_add_css(path_to_theme() . '/css/ie8.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'gte IE 7', '!IE' => FALSE), 'preprocess' => FALSE));
 }
