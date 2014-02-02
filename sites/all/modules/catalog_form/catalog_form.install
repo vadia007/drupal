@@ -1,0 +1,49 @@
+<?php
+/**
+ * Implements hook_schema().
+ */
+function catalog_form_schema()
+{
+    $schema['guest_reply'] = array(
+
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+            ),
+            'category' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'tid' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'name' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'phone' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'question' => array(
+                'type' => 'text',
+            ),
+            'time' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'mid' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+
+    return $schema;
+}

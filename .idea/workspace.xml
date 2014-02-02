@@ -4,65 +4,16 @@
     <list default="true" id="e7cfec87-b35e-470a-96cc-e1ab031c9977" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/ky100-2014-01-02T14-45-14.mysql.gz" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/ky100-2014-01-09T23-43-41.mysql.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ky100-2014-01-11T14-11-46.mysql.gz" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/localhost-2013-12-24T22-37-39.mysql.gz" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/color/base.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/color/base.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/color/color.inc" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/color/color.inc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/color/preview.css" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/color/preview.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/color/preview.html" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/color/preview.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/color/preview.js" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/color/preview.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/color/preview.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/color/preview.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/css/ie8.css" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/css/ie8.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/MyriadPro-Regular.otf" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/MyriadPro-Regular.otf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/a-futuricabook.eot" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/a-futuricabook.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/a-futuricabook.ttf" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/a-futuricabook.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/a-futuricabook.woff" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/a-futuricabook.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/myriadpro-regular.eot" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/myriadpro-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/myriadpro-regular.svg" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/myriadpro-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/myriadpro-regular.ttf" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/myriadpro-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/myriadpro-regular.woff" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/myriadpro-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/standardposterctt.eot" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/standardposterctt.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/standardposterctt.svg" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/standardposterctt.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/standardposterctt.ttf" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/standardposterctt.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/fonts/standardposterctt.woff" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/fonts/standardposterctt.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/add.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/backgraund.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/backgraund.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_kat.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_kat.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_kat1.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_kat1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_rev.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_rev.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_sign.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_sign.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_sign1.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_sign1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_signi.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_signi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_signin.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_signin.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_signin2.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_signin2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/button_signr.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/button_signr.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/buttons.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/buttons.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/check.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/check.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/checkbox.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/checkbox.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/checkbox_c.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/checkbox_c.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/comment-arrow-rtl.gif" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/comment-arrow-rtl.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/comment-arrow.gif" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/comment-arrow.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/footer.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/footer.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/header.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/header.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/input.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/input.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/input_reg.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/input_reg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/main.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/main.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/main2.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/main2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/search-button.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/search-button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/tabs-border.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/tabs-border.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/textarea.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/textarea.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/images/uncheck.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/images/uncheck.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/js/checkbox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/ku100.info" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/ky100.info" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/screenshot.png" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/screenshot.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/template.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/template.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/comment-wrapper.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/templates/comment-wrapper.tpl.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/comment.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/templates/comment.tpl.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/maintenance-page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/templates/maintenance-page.tpl.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/node.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/templates/node.tpl.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.info" afterPath="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module" afterPath="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/ky100/ky100.module" afterPath="$PROJECT_DIR$/sites/all/modules/ky100/ky100.module" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/ky100/term.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/ky100/term.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ky100/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ky100/js/checkbox.js" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/js/checkbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" />
     </list>
     <ignored path="drupal.loc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,28 +38,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ky100.info" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/ky100/ky100.info">
+      <file leaf-file-name="page.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="50" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="catalog_form.info" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.info">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="10" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="catalog_form.module" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="52" selection-start="1164" selection-end="1164" vertical-scroll-proportion="-0.2857143">
+            <state line="196" column="0" selection-start="7594" selection-end="7594" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,7 +50,34 @@
       <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="421" column="14" selection-start="9652" selection-end="9652" vertical-scroll-proportion="0.2039801">
+            <state line="619" column="22" selection-start="13505" selection-end="13505" vertical-scroll-proportion="0.48453608">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="catalog_form.module" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="238" column="33" selection-start="7224" selection-end="7245" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_links.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/user_links.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="54" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="count_message.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/count_message.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="44" selection-end="134" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,18 +86,34 @@
       <file leaf-file-name="ky100.module" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/ky100/ky100.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="0" selection-start="2252" selection-end="2514" vertical-scroll-proportion="-5.5102043">
-              <folding>
-                <element signature="e#6#8#0" expanded="true" />
-              </folding>
+            <state line="40" column="1" selection-start="924" selection-end="924" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.tpl.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php">
+      <file leaf-file-name="catalog_form.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="18" selection-start="7057" selection-end="7057" vertical-scroll-proportion="0.0">
+            <state line="21" column="52" selection-start="937" selection-end="937" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="privatemsg-recipients.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg-recipients.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="192" selection-end="260" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="privatemsg.pages.inc" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg.pages.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="179" column="60" selection-start="6157" selection-end="6157" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -159,31 +135,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.unifiedlogin.js" />
-        <option value="$PROJECT_DIR$/modules/system/system.base.css" />
-        <option value="$PROJECT_DIR$/robots.txt" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/ku100.info" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/template.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/css/ie8.css" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/js/checkbox.js" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/templates/page.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ku100/css/style.css" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ky100/template.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ky100/ku100.info" />
-        <option value="$PROJECT_DIR$/sites/all/modules/ky100/term.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.info" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ky100/js/checkbox.js" />
+        <option value="$PROJECT_DIR$/sites/all/modules/ky100/term.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ky100/js/search.js" />
+        <option value="$PROJECT_DIR$/sites/default/settings.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.module" />
         <option value="$PROJECT_DIR$/sites/all/modules/ky100/ky100.module" />
+        <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/count_message.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg-recipients.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/links.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module" />
+        <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/user_links.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg.pages.inc" />
+        <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js" />
         <option value="$PROJECT_DIR$/sites/all/themes/ky100/css/style.css" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
     <option name="y" value="25" />
-    <option name="width" value="1284" />
-    <option name="height" value="777" />
+    <option name="width" value="1280" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -211,7 +186,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,24 +215,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drupal.loc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drupal.loc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,7 +340,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="smtp" />
+              <option name="myItemId" value="privatemsg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,16 +396,73 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catalog_form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backup_migrate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test.loc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
@@ -525,7 +538,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="25" width="1284" height="777" extended-state="0" />
+    <frame x="0" y="25" width="1280" height="775" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -534,13 +547,13 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2560778" sideWeight="0.32591414" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6709062" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.273906" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25931928" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -602,113 +615,100 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="14" selection-start="5781" selection-end="5821" vertical-scroll-proportion="0.58303887" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/js/checkbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="1" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1388356209293" expanded="true" signature="1433:1451" placeholder="{...}" />
-            <marker date="1388356209293" expanded="true" signature="1473:1501" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="5" column="15" selection-start="64" selection-end="64" vertical-scroll-proportion="0.02636204" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robots.txt">
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="622" selection-end="622" vertical-scroll-proportion="0.02636204" />
+        <state line="8" column="11" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1266" column="43" selection-start="48464" selection-end="48464" vertical-scroll-proportion="0.25795054" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/css/ie8.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="14" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="18" selection-start="7057" selection-end="7057" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/smtp/smtp.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/ky100/term.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="225" selection-end="225" vertical-scroll-proportion="0.18817204">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="16" selection-start="5726" selection-end="5726" vertical-scroll-proportion="0.7082569">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/ky100.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="24" selection-start="485" selection-end="485" vertical-scroll-proportion="0.5721393">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/ky100/ky100.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="50" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/sites/default/files/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.info">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
+        <state line="3" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="4" selection-start="7977" selection-end="7977" vertical-scroll-proportion="0.027522936" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/ky100/term.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="11" selection-start="326" selection-end="326" vertical-scroll-proportion="0.20725389" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/logintoboggan/logintoboggan.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="140" selection-start="7556" selection-end="7565" vertical-scroll-proportion="0.06287425" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="196" column="0" selection-start="7594" selection-end="7594" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/count_message.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="44" selection-end="134" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/user_links.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="54" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/ky100/ky100.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2252" selection-end="2514" vertical-scroll-proportion="-5.5102043">
-          <folding>
-            <element signature="e#6#8#0" expanded="true" />
-          </folding>
+        <state line="40" column="1" selection-start="924" selection-end="924" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg-recipients.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="192" selection-end="260" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg.pages.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="60" selection-start="6157" selection-end="6157" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="52" selection-start="1164" selection-end="1164" vertical-scroll-proportion="-0.2857143">
+        <state line="238" column="33" selection-start="7224" selection-end="7245" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="52" selection-start="937" selection-end="937" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="421" column="14" selection-start="9652" selection-end="9652" vertical-scroll-proportion="0.2039801">
+        <state line="619" column="22" selection-start="13505" selection-end="13505" vertical-scroll-proportion="0.48453608">
           <folding />
         </state>
       </provider>

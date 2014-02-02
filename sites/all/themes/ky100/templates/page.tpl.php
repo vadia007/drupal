@@ -1,4 +1,5 @@
 <?php
+drupal_add_js($directory . '/js/search.js', 'file');
 
 /**
  * @file
@@ -137,12 +138,21 @@
 
     <?php if ($is_front): ?>
     <div id="main">
-    <div id="main_img"></div>
-    <div id="sidebar_r">
-        <?php print render($page['video']); ?>
-        <a class="about" href="#"><?php print t('О нас');?></a>
-        <a class="support" href="#"><?php print t('Служба поддержки');?></a>
-    </div></div>
+        <div id="main_img">
+            <div id="search">
+                <input type="text" value="<?php echo t('Поиск');?>">
+                <a href="catalog">
+                    <img src="<?php echo $directory;?>/images/search_button.png" alt="Поиск">
+                </a>
+            </div>
+        </div>
+
+        <div id="sidebar_r">
+            <?php print render($page['video']); ?>
+            <a class="about" href="#"><?php print t('О нас');?></a>
+            <a class="support" href="#"><?php print t('Служба поддержки');?></a>
+        </div>
+    </div>
     <?php endif; ?>
 
     <?php if (!$is_front): ?>

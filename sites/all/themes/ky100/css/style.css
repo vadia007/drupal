@@ -55,6 +55,7 @@ a:focus {
 
 h1{
     color: #B9B9B8;
+    text-align: right;
 }
 input[type="submit"]:hover{
     cursor: pointer;
@@ -79,7 +80,7 @@ a#logo{
     display: block;
     margin-left: 50px;
     width: 238px;
-    padding: 13px 0;
+    padding-top: 17px;
 }
 div#nav{
     position: absolute;
@@ -112,12 +113,12 @@ div#nav ul li a.active{
 div#main{
     min-height: 100%;
     width: 100%;
-    height: 500px;
+    height: 469px;
 }
 div#main_img{
     background: url("../images/main.png") 0 0 no-repeat;
     width: 825px;
-    height: 520px;
+    height: 494px;
     margin-left: 30px;
     margin-top: -25px;
     float: left;
@@ -150,7 +151,6 @@ div#footer a#catalog{
     margin-left: 17px;
     font-size: 63px;
     text-transform: uppercase;
-    /*font-weight: bold;*/
     padding: 15px 0 0 260px;
     color: #fff;
     width: 593px;
@@ -173,6 +173,7 @@ div#footer a#sign_in{
 div#content{
     padding: 0 28px;
     min-heigh: 100%;
+    min-height: 500px;
 }
 div#content .toboggan-unified #login-form{
     margin: 0 auto;
@@ -271,22 +272,13 @@ div.toboggan-unified input[type="password"],
 div.toboggan-unified input[type="email"],
 form#user-pass input[type="text"]{
     border: 2px;
-    /*background: #fff;*/
-    /*box-shadow: inset 2px 2px 4px 1px  #3b3b3b;*/
-    /*-moz-box-shadow: inset 2px 2px 4px 1px  #3b3b3b;*/
-    /*-webkit-box-shadow:inset 2px 2px 4px 1px  #3b3b3b;*/
     background: url("../images/input_reg.png") no-repeat;
     height: 23px;
-    /*filter:*/
-    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=45,strength=5)*/
-    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=135,strength=5)*/
-    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=225,strength=5)*/
-    /*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=315,strength=5);*/
-
 }
 form#user-pass div.form-type-textfield{
     width: 360px;
     text-align: center;
+    margin: 0 auto;
 }
 form#user-pass div.form-type-textfield input{
     width: 360px;
@@ -513,3 +505,248 @@ div#block-catalog-form-catalog-form input[type='submit']{
     width: 175px;
     margin-left: 135px;
 }
+div#search{
+    margin-top: 436px;
+    height: 40px;
+}
+div#search input{
+    width: 561px;
+    background: url("../images/search_bg.png") no-repeat;
+    display: block;
+    float: left;
+    height: 36px;
+    margin-right: 5px;
+    margin-top: 1px;
+    font-family: a_futuricabookregular;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 11px;
+    padding-top: 3px;
+
+}
+.mask {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+}
+
+.boxes .window {
+    position:absolute;
+    left:0;
+    top:0;
+    width:440px;
+    height:200px;
+    display:none;
+    z-index:9999;
+    padding:20px;
+}
+
+.boxes #privatemsg-new{
+    width:auto;
+    height:auto;
+    padding:10px;
+    background-color:#C0C0C0;
+}
+.boxes #block-catalog-form-guest-reply{
+    width:auto;
+    height:auto;
+    padding:10px;
+    background-color:#C0C0C0;
+}
+div.grippie{
+    display: none;
+}
+#privatemsg-new a.active{
+    display: none;
+}
+div#privatemsg-list-form table.privatemsg-list{
+    width: 444px;
+    height: 314px;
+    background: url("../images/message-list.png") no-repeat;
+    overflow: auto;
+    display: block;
+    float: left;
+}
+div#privatemsg-list-form input[type='checkbox']{
+    display: inline;
+}
+div#privatemsg-list-form .checkbox{
+    background: none;
+    float: none;
+    display: none;
+}
+div#privatemsg-list-form tr{
+    background: none;
+    border: none;
+    padding: 0;
+}
+div#privatemsg-list-form tbody{
+    border: none;
+}
+div#privatemsg-list-form th{
+    border: none;
+}
+div#message-list{
+    width: 444px;
+    height: 314px;
+    background: url("../images/message-list.png") no-repeat;
+    overflow: auto;
+    display: block;
+    float: left;
+}
+table.sticky-header{
+    display: none;
+}
+div.privatemsg-message-column{
+    width: 90%;
+}
+#message-list p{
+    font-size: 14px;
+}
+#reply_msg{
+    background: url("../images/reply.png") no-repeat;
+    display: block;
+    width: 139px;
+    height: 59px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    padding: 23px 0 0 27px;
+    float: left;
+    margin-left: 350px;
+}
+#messages_l{
+    background: url("../images/messages.png") no-repeat;
+    display: block;
+    width: 172px;
+    height: 59px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    padding: 23px 0 0 22px;
+    float: left;
+}
+#privatemsg-new input.form-autocomplete{
+    background: url("../images/input.png") no-repeat;
+}
+a#edit-cancel{
+    display: none;
+}
+form#privatemsg-new textarea{
+    width: 464px;
+}
+ul.action-links{
+    display: none;
+}
+ul.primary{
+    /*display: none;*/
+}
+#block-catalog-form-message-counter{
+    width: 300px;
+    padding-left: 15px;
+    float: left;
+    margin-right: 40px;
+}
+#privatemsg-list{
+    /*width: 535px;*/
+}
+span#name{
+    display: block;
+    text-transform: uppercase;
+    color: #000;
+    font-family: a_futuricabookregular;
+    font-size: 24px;
+    text-align: center;
+}
+#logout{
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    background: url("../images/exit.png") no-repeat;
+    font-size: 24px;
+    width: 192px;
+    height: 59px;
+    padding-top: 23px;
+    padding-left: 114px;
+}
+span.counter{
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    background: url("../images/count_msg.png") no-repeat;
+    font-size: 13px;
+    width: 277px;
+    height: 27px;
+    text-align: center;
+    padding-top: 11px;
+    margin: 15px auto;
+}
+span.count{
+    display: block;
+    color: #000;
+    font-family: a_futuricabookregular;
+    font-size: 36px;
+    background: url("../images/count.png") no-repeat;
+    height: 48px;
+    width: 168px;
+    margin: 0 auto;
+    text-align: right;
+    letter-spacing: 12px;
+}
+.count > span{
+    margin-right: -5px;
+}
+#received_msg{
+    width: 444px;
+    height: 45px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    font-size: 24px;
+    text-transform: uppercase;
+    float: left;
+    background: url("../images/received_msg.png") no-repeat;
+    margin-bottom: 10px;
+    padding-top: 12px;
+}
+#privatemsg-list{
+    width: 444px;
+    float: left;
+}
+#block-catalog-form-user-links{
+    width: 306px;
+    display: block;
+    float: right;
+    margin-top: 35px;
+    height: 346px;
+}
+a.links{
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    background: url("../images/exit.png") no-repeat;
+    font-size: 24px;
+    width: 306px;
+    height: 59px;
+    padding-top: 23px;
+    text-align: center;
+}
+div.container-inline{
+    display: none;
+}
+/*#user-pass{*/
+    /*text-align: center;*/
+/*}*/
+/*#block-system-main{*/
+    /*float: left;*/
+    /*width: 444px;*/
+/*}*/

@@ -1,86 +1,6 @@
 <?php
-//
-//function ky100_form($form, &$form_state){
-//    $form=array();
-//    $form['category'] = array(
-//        '#type'	=> 'textfield',
-//        '#title' => t('Категория'),
-//        '#default_value' => t('Категория / Подкатегория'),
-//        '#required' => TRUE,
-//    );
-//    $form['name'] = array(
-//        '#type'	=> 'textfield',
-//        '#title' => t('ФИО'),
-//        '#default_value' => t('Имя фамилия отчество'),
-//        '#required' => TRUE,
-//    );
-//    $form['phone'] = array(
-//        '#type'	=> 'textfield',
-//        '#title' => t('Телефон'),
-//        '#default_value' => t('Телефон'),
-//    );
-//    $form['email'] = array(
-//        '#type'	=> 'textfield',
-//        '#title' => t('Электронная почта'),
-//        '#default_value' => t('Электронная почта'),
-//    );
-//
-//    $form['question'] = array(
-//        '#type' => 'textarea',
-//        '#title' => t('Вопрос'),
-//        '#default_value' => t('Задайте свой вопрос'),
-//        '#required' => TRUE,
-//        '#resizable' => FALSE
-//    );
-//    $form['time'] = array(
-//        '#type' => 'textfield',
-//        '#title' => t('Время ожидания ответа'),
-//        '#default_value' => t('Время ожидания ответа'),
-//    );
-//    $form['hour'] = array(
-//        '#markup' => t('Часов'),
-//    );
-////    $form['hour'] = array(
-////        '#type' => 'checkbox',
-////        '#title' => t('Часов'),
-////    );
-////    $form['minute'] = array(
-////        '#type' => 'checkbox',
-////        '#title' => t('Минут'),
-////    );
-//    $form['consent_msg'] = array(
-//        '#type' => 'checkbox',
-//        '#title' => t('Я согласен (на) на отправку сообщения организациям'),
-//        '#default_value' => TRUE,
-//    );
-//    $form['consent_email'] = array(
-//        '#type' => 'checkbox',
-//        '#title' => t('Я согласен (на) получать ответы от организаций на электронную почту'),
-//        '#default_value' => TRUE,
-//    );
-//    $form['consent_phone'] = array(
-//        '#type' => 'checkbox',
-//        '#title' => t('Я согласен (на) получать ответы от организаций на телефон'),
-//        '#default_value' => TRUE,
-//    );
-//    $form['submit'] = array(
-//        '#type' => 'submit',
-//        '#value' => t('Отправить'),
-//    );
-//    return $form;
-//}
-
-//function ky100_form_validate($form, &$form_state){
-//    if (!preg_match("/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/", $form_state['values']['email'])){
-//        form_set_error('email', t("Данная электронная почта не является валидной"));
-//    }
-//}
 
 function ky100_block_info() {
-    // This example comes from node.module.
-//    $blocks['katalog_form'] = array(
-//        'info' => t('Форма каталога'),
-//    );
     $blocks['term_parent'] = array(
         'info' => t('Родительская категория'),
     );
@@ -88,13 +8,8 @@ function ky100_block_info() {
 }
 
 function ky100_block_view($delta = '') {
-    // This example is adapted from node.module.
     $block = array();
     switch ($delta) {
-//        case 'katalog_form':
-//            $block['subject'] = t('Форма каталога');
-//            $block['content'] = drupal_get_form('ky100_form');
-//            break;
         case 'term_parent':
             $block['subject'] = t('Родительская категория');
             $block['content'] = get_term();

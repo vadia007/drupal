@@ -1,14 +1,3 @@
-//(function($){
-//    $(document).ready(function(){
-//        $("input#edit-remember-me").change(function(){
-//            if($(this).is(":checked")){
-//                $(this).next("label").addClass("LabelSelected");
-//            }else{
-//                $(this).next("label").removeClass("LabelSelected");
-//            }
-//        });
-//    });
-//})(jQuery);
 /*
 
  CUSTOM FORM ELEMENTS

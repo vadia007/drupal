@@ -1,81 +1,273 @@
 <?php
-
+$module_path = drupal_get_path('module', 'catalog_form');
+drupal_add_js($module_path . '/js/catalog_form.js', 'file');
+/**
+ * Implements hook_form().
+ */
 function catalog_form_form($form, &$form_state){
     $form=array();
     $form['category'] = array(
         '#type'	=> 'textfield',
-        '#title' => t('Категория'),
-        '#default_value' => t('Категория / Подкатегория'),
+        '#title' => t('Category'),
+        '#default_value' => t('Category'),
         '#required' => TRUE,
+        '#disabled' => TRUE,
+        '#attributes' => array('id' => array('cat')),
+    );
+    $form['tid'] = array(
+        '#type' => 'hidden',
+        '#value' => '',
+        '#attributes' => array('id' => array('hidden')),
     );
     $form['name'] = array(
         '#type'	=> 'textfield',
-        '#title' => t('ФИО'),
-        '#default_value' => t('Имя фамилия отчество'),
+        '#title' => t('Name'),
+        '#default_value' => t('Name surname first name'),
         '#required' => TRUE,
     );
     $form['phone'] = array(
         '#type'	=> 'textfield',
-        '#title' => t('Телефон'),
-        '#default_value' => t('Телефон'),
+        '#title' => t('Phone'),
+        '#default_value' => t('Phone'),
     );
     $form['email'] = array(
         '#type'	=> 'textfield',
-        '#title' => t('Электронная почта'),
-        '#default_value' => t('Электронная почта'),
+        '#title' => t('E-mail'),
+        '#default_value' => t('E-mail'),
     );
 
     $form['question'] = array(
         '#type' => 'textarea',
-        '#title' => t('Вопрос'),
-        '#default_value' => t('Задайте свой вопрос'),
+        '#title' => t('Question'),
+        '#default_value' => t('Ask your question'),
         '#required' => TRUE,
         '#resizable' => FALSE
     );
     $form['time'] = array(
         '#type' => 'textfield',
-        '#title' => t('Время ожидания ответа'),
+        '#title' => t('Response time'),
     );
     $form['hour'] = array(
         '#markup' => t('<div class="hour">Часов</div>'),
     );
     $form['consent_msg'] = array(
         '#type' => 'checkbox',
-        '#title' => t('Я согласен (на) на отправку сообщения организациям'),
+        '#title' => t('I agree to send a message to organizations'),
         '#default_value' => TRUE,
     );
     $form['consent_email'] = array(
         '#type' => 'checkbox',
-        '#title' => t('Я согласен (на) получать ответы от организаций на электронную почту'),
+        '#title' => t('I agree to receive responses from organizations in the email'),
         '#default_value' => TRUE,
     );
     $form['consent_phone'] = array(
         '#type' => 'checkbox',
-        '#title' => t('Я согласен (на) получать ответы от организаций на телефон'),
+        '#title' => t('I agree to receive responses from the organizations on the phone'),
         '#default_value' => TRUE,
     );
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => t('Отправить'),
+        '#value' => t('Send'),
+        '#submit' => array('catalog_form_form_submit'),
     );
     return $form;
 }
+/**
+ * Implements hook_form().
+ */
+function guest_reply_form($form, &$form_state){
+    $form=array();
+    $form['message'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Message'),
+        '#default_value' => t('Your message'),
+        '#required' => TRUE,
+        '#resizable' => FALSE
+    );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Send Message'),
+        '#submit' => array('guest_reply_form_submit'),
+
+    );
+    return $form;
+}
+/**
+ * Implements hook_block_info().
+ */
 function catalog_form_block_info() {
     // This example comes from node.module.
     $blocks['catalog_form'] = array(
-        'info' => t('Форма каталога'),
+        'info' => t('Catalog form'),
     );
+    $blocks['guest_reply'] = array(
+        'info' => t('Guest reply'),
+    );
+    $blocks['message_counter'] = array(
+        'info' => t('Message counter'),
+    );
+    $blocks['user_links'] = array(
+        'info' => t('User links'),
+    );
+
     return $blocks;
 }
+/**
+ * Implements hook_block_view().
+ */
 function catalog_form_block_view($delta = '') {
-    // This example is adapted from node.module.
     $block = array();
-            $block['subject'] = t('Форма каталога');
+    switch($delta){
+        case 'catalog_form':
+            $block['subject'] = t('Catalog form');
             $block['content'] = drupal_get_form('catalog_form_form');
+            break;
+        case 'guest_reply':
+            if(get_author() == '0'){
+                $block['subject'] = t('Guest reply');
+                $block['content'] = drupal_get_form('guest_reply_form');
+            }
+            break;
+        case 'message_counter':
+            $block['subject'] = t('Message counter');
+            $block['content'] = message_count();
+            break;
+        case 'user_links':
+            $block['subject'] = t('Links');
+            $block['content'] = theme('user_links');
+            break;
+    }
     return $block;
 }
+/**
+ * Implements hook_form_validate().
+ */
 function ky100_form_validate($form, &$form_state){
-    if (!preg_match("/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/", $form_state['values']['email'])){
-        form_set_error('email', t("Данная электронная почта не является валидной"));
+    if (!is_valid_email($form_state['values']['email'])){
+        form_set_error('email', t('This email is not valid'));
     }
+}
+
+function is_valid_email($email){
+    return preg_match("/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/", $email);
+}
+
+function get_users($tid){
+    $query = db_select('field_data_field_category', 'c')
+        ->fields('c', array('entity_id'))
+        ->condition('c.field_category_tid', $tid, '=')
+    //->range(0, 10)
+        ->execute();
+    while ($user = $query->fetchassoc()){
+        $users[] = $user['entity_id'];
+    }
+    if (isset($users)){
+        return $users;
+    }else{
+        return;
+    }
+
+}
+
+function get_author(){
+    if((arg(0) == 'messages') and (arg(1) == 'view') and (arg(2))){
+        $mid = (int)arg(2);
+        $query = db_select('pm_message', 'm')
+            ->fields('m', array('author'))
+            ->condition('mid', $mid)
+            ->execute()
+            ->fetchAssoc();
+        return $query['author'];
+    }
+
+}
+function get_message($mid){
+    $query = db_select('guest_reply', 'g')
+        ->fields('g')
+        ->condition('g.mid', $mid, '=')
+        ->execute()
+        ->fetchassoc();
+    return $query;
+}
+
+function catalog_form_form_submit($form, &$form_state) {
+    $users = get_users($_POST['tid']);
+    if (!$users){
+        drupal_set_message(t('Users not found in this category'));
+
+    } else{
+        $message = t('Sender').": ".$form_state['values']['name']
+            ."\n".t("Phone").": ".$form_state['values']['phone']
+            ."\n".t("E-mail").": ".$form_state['values']['email']
+            ."\n".t("Question").": ".$form_state['values']['question'];
+        foreach($users as $user){
+            $send = privatemsg_new_thread(array(user_load($user)), t('Theme'), $message);
+            $mid = $send['message']->mid;
+            //    echo $mid;
+            db_insert('guest_reply')
+                ->fields(array(
+                'category' => $form_state['values']['category'],
+                'tid' => $form_state['values']['tid'],
+                'name' => $form_state['values']['name'],
+                'phone' => $form_state['values']['phone'],
+                'email' => $form_state['values']['email'],
+                'question' => $form_state['values']['question'],
+                'time' => $form_state['values']['time'],
+                'mid' => $mid,
+            ))
+                ->execute();
+        }
+        if($send){
+            drupal_set_message(t('Your question has been sent successfully'));
+        }}
+}
+
+function guest_reply_form_submit($form, &$form_state){
+    $mid = (int)arg(2);
+    $message = get_message($mid);
+    $params = $form_state['values'];
+    $mail = drupal_mail('catalog_form', 'key', $message['email'], language_default(), $params);
+    if ($mail['result']){
+        drupal_set_message(t('Your message has been sent successfully'));
+    }
+    else {
+        drupal_set_message(t('Message was not sent'), 'error');
+    }
+}
+function catalog_form_mail($key, &$message, $params) {
+    if ($key == 'key') {
+        $message['subject'] = t('The answer from site:').' '.base_path();
+        $message['body'][] = $params['message'];
+    }
+}
+/**
+ * Implements hook_user_login
+ */
+function catalog_form_user_login(&$edit, $account) {
+    $edit['redirect'] = 'messages';
+}
+
+function message_count(){
+    global $user;
+    $username = $user->name;
+    return theme('count_message', array('name' => $username));
+}
+//function get_links(){
+//    return theme('links',array());
+//}
+/**
+ * Implements hook_theme
+ */
+function catalog_form_theme() {
+    $module_path = drupal_get_path('module', 'catalog_form');
+    return array(
+        'count_message' => array(
+            'template' => 'count_message',
+            'path' => $module_path,
+        ),
+        'user_links' => array(
+            'template' => 'user_links',
+            'path' => $module_path,
+        )
+    );
 }
