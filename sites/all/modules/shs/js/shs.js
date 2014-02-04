@@ -136,7 +136,7 @@
           // Add empty option (if field is not required and not multiple
           // or this is not the first level and not multiple).
           if (!settings.settings.required || (settings.settings.required && parent_value != 0 && !settings.multiple)) {
-            options[options.length] = new Option(Drupal.t('- None -'), 0);
+//            options[options.length] = new Option(Drupal.t('- None -'), 0);
           }
 
           if (settings.settings.create_new_terms) {
@@ -155,7 +155,7 @@
           if (!elementConvertToChosen($element, settings)) {
             // Display original dropdown element.
             $element.fadeIn();
-            $element.css('display','inline-block');
+           // $element.css('display','inline-block');
           }
 
           // If there is no data, the field is required and the user is allowed

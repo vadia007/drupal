@@ -10,9 +10,9 @@
             $("#cat").val(cat);
         });
 
-        clearDefaultField($("input[type='text'], textarea"));
+        clearDefaultField($("#catalog-form-form input[type='text'], #catalog-form-form textarea"));
 
-        if(window.location.pathname.split("/")[3]=='view'){
+        if(window.location.pathname.split("/")[2]=='view'){
 
             $(".privatemsg-message").wrapAll("<div id='message-list'></div>");
             $("#privatemsg-new").before("<a href='#' id='reply_msg'>Ответить</a>");
@@ -29,6 +29,10 @@
                 $("#block-catalog-form-guest-reply").addClass("window");
             }
         }
+
+        $("a#child").click(function(event) {
+            event.preventDefault();
+        })
 
         function modale(element){
             $('#reply_msg').click(function(e) {

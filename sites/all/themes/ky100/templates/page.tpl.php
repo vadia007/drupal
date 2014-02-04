@@ -183,7 +183,7 @@ drupal_add_js($directory . '/js/search.js', 'file');
     </div> <!-- /#content -->
     <?php endif; ?>
 
-    <div class="empty"></div>
+<!--    <div class="empty"></div>-->
 </div> <!-- /#page-wrapper -->
 <div id="footer" >
     <?php if ($is_front): ?>
