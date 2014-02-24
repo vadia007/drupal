@@ -6,12 +6,11 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/ky100-2014-01-09T23-43-41.mysql.gz" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/ky100-2014-01-11T14-11-46.mysql.gz" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/ky100-2014-01-12T01-07-28.mysql.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ky100-2014-02-02T19-09-14.mysql.gz" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/localhost-2013-12-24T22-37-39.mysql.gz" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module" afterPath="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js" afterPath="$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/catalog_form/user_links.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/catalog_form/user_links.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/shs/js/shs.js" afterPath="$PROJECT_DIR$/sites/all/modules/shs/js/shs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ky100/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" />
     </list>
@@ -38,10 +37,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="page.tpl.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="page.tpl.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="14" selection-start="6878" selection-end="6923" vertical-scroll-proportion="-3.3333333">
+            <state line="194" column="24" selection-start="7676" selection-end="7676" vertical-scroll-proportion="0.7508834">
               <folding />
             </state>
           </provider>
@@ -59,7 +58,7 @@
       <file leaf-file-name="privatemsg-recipients.tpl.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg-recipients.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="192" selection-end="260" vertical-scroll-proportion="-2.5">
+            <state line="4" column="0" selection-start="192" selection-end="260" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -68,16 +67,16 @@
       <file leaf-file-name="catalog_form.module" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="1" selection-start="7996" selection-end="7996" vertical-scroll-proportion="-9.75">
+            <state line="244" column="48" selection-start="7750" selection-end="7750" vertical-scroll-proportion="0.41666666">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="860" column="1" selection-start="18479" selection-end="18479" vertical-scroll-proportion="0.52072966">
+            <state line="168" column="24" selection-start="3606" selection-end="3606" vertical-scroll-proportion="-8.52">
               <folding />
             </state>
           </provider>
@@ -86,7 +85,7 @@
       <file leaf-file-name="catalog_form.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+            <state line="14" column="48" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -118,21 +117,20 @@
         <option value="$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg.pages.inc" />
         <option value="$PROJECT_DIR$/sites/all/modules/shs/js/shs.js" />
         <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/user_links.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module" />
         <option value="$PROJECT_DIR$/sites/default/settings.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/ky100/ky100.info" />
         <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js" />
+        <option value="$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module" />
         <option value="$PROJECT_DIR$/sites/all/themes/ky100/css/style.css" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
     <option name="y" value="25" />
-    <option name="width" value="1284" />
-    <option name="height" value="777" />
+    <option name="width" value="1280" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -337,14 +335,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catalog_form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -422,25 +446,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="25" width="1284" height="777" extended-state="6" />
+    <frame x="0" y="25" width="1280" height="775" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.6709062" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2560778" sideWeight="0.32591414" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24068071" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.6709062" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24473257" sideWeight="0.6709062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -508,105 +532,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg-view.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/user_links.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/default/default.settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="49" selection-start="7628" selection-end="7670" vertical-scroll-proportion="0.9916318">
-          <folding />
-        </state>
+        <state line="208" column="49" selection-start="7628" selection-end="7670" vertical-scroll-proportion="0.9916318" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="28" selection-start="7880" selection-end="7880" vertical-scroll-proportion="0.666055">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="14" selection-start="6878" selection-end="6923" vertical-scroll-proportion="-3.3333333">
-          <folding />
-        </state>
+        <state line="219" column="28" selection-start="7880" selection-end="7880" vertical-scroll-proportion="0.666055" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/common.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="7" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.35502958">
-          <folding />
-        </state>
+        <state line="74" column="7" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.35502958" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/system/system.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1176" column="48" selection-start="45986" selection-end="45986" vertical-scroll-proportion="0.33431953">
-          <folding />
-        </state>
+        <state line="1176" column="48" selection-start="45986" selection-end="45986" vertical-scroll-proportion="0.33431953" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/ky100.info">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="341" selection-end="341" vertical-scroll-proportion="0.68">
-          <folding />
-        </state>
+        <state line="17" column="0" selection-start="341" selection-end="341" vertical-scroll-proportion="0.68" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg-alternatives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="10" selection-start="141" selection-end="141" vertical-scroll-proportion="0.20718232">
-          <folding />
-        </state>
+        <state line="5" column="10" selection-start="141" selection-end="141" vertical-scroll-proportion="0.20718232" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/privatemsg/privatemsg-recipients.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="192" selection-end="260" vertical-scroll-proportion="-2.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="192" selection-end="260" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/count_message.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="44" selection-end="134" vertical-scroll-proportion="0.02688172">
+        <state line="1" column="0" selection-start="44" selection-end="134" vertical-scroll-proportion="0.02688172" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="24" selection-start="3606" selection-end="3606" vertical-scroll-proportion="-8.52">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/catalog_form.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="1" selection-start="7996" selection-end="7996" vertical-scroll-proportion="-9.75">
+        <state line="244" column="48" selection-start="7750" selection-end="7750" vertical-scroll-proportion="0.41666666">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/css/style.css">
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/catalog_form/js/catalog_form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="860" column="1" selection-start="18479" selection-end="18479" vertical-scroll-proportion="0.52072966">
+        <state line="14" column="48" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ky100/templates/page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="24" selection-start="7676" selection-end="7676" vertical-scroll-proportion="0.7508834">
           <folding />
         </state>
       </provider>

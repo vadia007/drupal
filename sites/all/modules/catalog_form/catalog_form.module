@@ -230,7 +230,7 @@ function guest_reply_form_submit($form, &$form_state){
     $mid = (int)arg(2);
     $message = get_message($mid);
     $params = $form_state['values'];
-    $mail = drupal_mail('catalog_form', 'key', $message['email'], language_default(), $params);
+    $mail = drupal_mail('catalog_form', 'key', trim($message['email']), language_default(), $params);
     if ($mail['result']){
         drupal_set_message(t('Your message has been sent successfully'));
     }
@@ -240,7 +240,8 @@ function guest_reply_form_submit($form, &$form_state){
 }
 function catalog_form_mail($key, &$message, $params) {
     if ($key == 'key') {
-        $message['subject'] = t('The answer from site:').' '.base_path();
+        global $base_url;
+        $message['subject'] = t('The answer from site:').' '.$base_url;
         $message['body'][] = $params['message'];
     }
 }

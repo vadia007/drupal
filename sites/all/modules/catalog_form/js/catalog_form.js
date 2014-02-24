@@ -10,9 +10,9 @@
             $("#cat").val(cat);
         });
 
-        clearDefaultField($("#catalog-form-form input[type='text'], #catalog-form-form textarea"));
+        clearDefaultField($("#catalog-form-form input[type='text'], #catalog-form-form textarea, #guest-reply-form textarea"));
 
-        if(window.location.pathname.split("/")[2]=='view'){
+        if(window.location.pathname.split("/")[3]=='view'){
 
             $(".privatemsg-message").wrapAll("<div id='message-list'></div>");
             $("#privatemsg-new").before("<a href='#' id='reply_msg'>Ответить</a>");

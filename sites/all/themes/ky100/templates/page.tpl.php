@@ -183,13 +183,18 @@ drupal_add_js($directory . '/js/search.js', 'file');
     </div> <!-- /#content -->
     <?php endif; ?>
 
-<!--    <div class="empty"></div>-->
+    <!--    <div class="empty"></div>-->
 </div> <!-- /#page-wrapper -->
 <div id="footer" >
     <?php if ($is_front): ?>
     <a id="catalog" href="catalog"><?php print t('Каталог');?></a>
-    <a id="sign_in" href="user/login"><?php print t('Вход / Регистрация');?></a>
-    <?php endif; ?>
+    <?php
+    global $user;
+    if (!in_array('authenticated user', $user->roles)){ ?>
+        <a class="sign_in" href="user/login"><?php print t('Вход / Регистрация');?></a>
+        <?php } else {?>
+        <a class="sign_in" href="messages"><?php print t('Profile');?></a>
+        <?php } endif; ?>
 
 </div><!-- /#footer -->
 

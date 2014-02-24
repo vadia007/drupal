@@ -157,18 +157,19 @@ div#footer a#catalog{
     float: left;
     font-family: StandardPosterCTTRegular;
 }
-div#footer a#sign_in{
+div#footer a.sign_in{
     background: url("../images/button_signin.png") no-repeat;
-    width: 280px;
+    width: 320px;
     height: 70px;
     display: block;
     float: left;
     text-transform: uppercase;
     font-size: 24px;
     color: #fff;
-    padding: 21px 0 0 40px;
+    padding: 21px 0 0 0;
     margin-top: 8px;
     font-family: a_futuricabookregular;
+    text-align: center;
 }
 div#content{
     padding: 0 28px;
@@ -873,4 +874,15 @@ td.privatemsg-list-date{
 #user-register-form{
     width: 700px;
     float: right;
+}
+table.privatemsg-list thead{
+    width: 100%;
+}
+td.empty{
+    width: 444px;
+    text-align: center;
+}
+#guest-reply-form .form-submit{
+    display: block;
+    margin: 0 auto;
 }
