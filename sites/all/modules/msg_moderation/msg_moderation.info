@@ -1,0 +1,4 @@
+name = Msg moderation
+description = Moderate private messages
+core = 7.x
+package = Ky100

@@ -16,7 +16,7 @@ function catalog_form_form($form, &$form_state){
     );
     $form['tid'] = array(
         '#type' => 'hidden',
-        '#value' => '',
+        '#default_value' => '',
         '#attributes' => array('id' => array('hidden')),
     );
     $form['name'] = array(

@@ -1,0 +1,178 @@
+<?php
+function msg_moderation_menu() {
+    $items = array();
+    $items['admin/structure/msg_moderation'] = array(
+        'title' => t('Message moderation'),
+        'description' => t('List of messages for moderation'),
+//        'page callback' => 'msg_moderation_form',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('msg_moderation_form'),
+        'access arguments' => array('administer site configuration'),
+    );
+    return $items;
+}
+
+function message_list(){
+    $list = get_moderated_messages();
+    if (!$list){
+        return t('All messages was moderated');
+    }
+    return drupal_get_form('msg_moderation_form');
+}
+
+function msg_moderation_form($form_state) {
+
+
+    $header = array
+    (
+        'author' => t('Author'),
+        'message' => t('Message'),
+    );
+    $list = get_moderated_messages();
+    if(!$list){
+        $form['table'] = array
+        (
+            '#type' => 'tableselect',
+            '#header' => $header,
+            '#empty' => t('All messages was moderated'),
+        );
+        return $form;
+    }
+    $options = array();
+    foreach($list as $message)
+    {
+        $options[$message['mid']] = array
+        (
+            'author' => ($message['name'] != '') ? $message['name'] : t('Guest'),
+            'message' => $message['body'],
+        );
+    }
+
+    $form['table'] = array
+    (
+        '#type' => 'tableselect',
+        '#header' => $header,
+        '#options' => $options,
+        '#empty' => t('Messages not found'),
+    );
+    $form['pager'] = array('#markup' => theme('pager'));
+
+    $form['action'] = array(
+        '#type' => 'select',
+        '#title' => t('The action with the selected fields'),
+        '#options' => array(
+            0 => t('Confirm'),
+            1 => t('Reject'),
+        ),
+        '#default_value' => 0,
+    );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Save'),
+    );
+
+    return $form;
+
+}
+
+function msg_moderation_form_submit($form, &$form_state) {
+    foreach($form['table'] as $messages){
+        if(isset($messages['#checked']) and $messages['#checked'] == true){
+            $selected[] = $messages['#return_value'];
+        }
+    }
+
+    if(isset($selected)){
+        if($form['action']['#value'] == 0){
+            foreach($selected as $mid){
+                $message = privatemsg_message_load($mid);
+                if($message->mid == $message->thread_id){
+                    privatemsg_new_thread(array(user_load(get_recipient_id($message->mid))), $message->subject, $message->body, array('author' => $message->author, 'new' => true));
+                }else{
+                    $conf_message = privatemsg_reply($message->thread_id, $message->body, $options = array('author' => $message->author, 'reply' => true));
+                    privatemsg_message_change_delete($conf_message['message']->mid, '1', $conf_message['message']->author);
+                }
+            }
+            update($selected, '1');
+        }else{
+            foreach($selected as $mid){
+                privatemsg_message_change_delete($mid, '1', null);
+            }
+            update($selected, '2');
+        }
+    }
+}
+
+function get_recipient_id($mid){
+    $rid = db_select('msg_moderation', 'm')
+        ->fields('m',array('recipients_id'))
+        ->condition('mid', $mid,'=')
+        ->execute()
+        ->fetchCol(0);
+    return $rid['0'];
+}
+function update($update, $status){
+    db_update('msg_moderation')
+        ->fields(array('status' => $status,))
+        ->condition ('mid', $update, 'IN')
+        ->execute();
+}
+
+function msg_moderation_privatemsg_message_insert($message) {
+    if((!isset($message->reply)) and (!isset($message->new))){
+        $status = '0';
+        insert_mid($message->mid, $status, $message->recipients_id);
+    }
+}
+
+function msg_moderation_privatemsg_message_presave_alter(&$message) {
+
+    if((!isset($message->new)) and (!isset($message->reply))){
+        $recipients = $message->recipients;
+        foreach($recipients as $recipient){
+            $user_uid  = 'user_'.$recipient->uid;
+            $message->recipients_id = $recipient->uid;
+            unset($message->recipients["$user_uid"]);
+        }
+    }
+}
+
+function insert_mid($mid, $status, $recipients_id){
+    db_insert('msg_moderation')
+        ->fields(array(
+        'mid' => $mid,
+        'status' => $status,
+        'recipients_id' => $recipients_id
+    ))
+        ->execute();
+}
+
+function get_array_mid($status){
+    $mid = db_select('msg_moderation', 'm')
+        ->fields('m',array('mid'))
+        ->condition('status', $status,'=')
+        ->execute()
+        ->fetchCol(0);
+    return $mid;
+}
+
+
+function get_moderated_messages(){
+    $mid = get_array_mid('0');
+    if (!$mid){
+        return;
+    }
+    $query = db_select('pm_message', 'm')
+        ->extend('PagerDefault');
+    $query->innerJoin('users', 'u', 'u.uid = m.author');
+    $query->fields('m', array('mid', 'body'));
+    $query->fields('u', array('name'));
+    $query->condition('mid', $mid,'IN');
+    $result = $query->limit(20)
+        ->execute();
+    while ($message = $result->fetchassoc()){
+        $messages[] = $message;
+    }
+    return $messages;
+
+}

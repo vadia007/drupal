@@ -1,13 +1,17 @@
 (function($){
     $(document).ready(function(){
 
+        var tid = $("#hidden").val();
+        if(tid != ''){
+            var cat = $('[tid ='+tid+']').text();
+            $("#cat").val(cat);
+        }
         $("a#child").click(function(event){
-//            var tid = $(this).attr("tid");
-//            var cat = $(this).text();
-            var tid = $(event.currentTarget).attr('tid')
-            var cat = $(event.currentTarget).text();
+            tid = $(event.currentTarget).attr('tid')
+            cat = $(event.currentTarget).text();
             $("#hidden").val(tid);
             $("#cat").val(cat);
+
         });
 
         clearDefaultField($("#catalog-form-form input[type='text'], #catalog-form-form textarea, #guest-reply-form textarea"));

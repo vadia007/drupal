@@ -1,0 +1,31 @@
+<?php
+/**
+ * Implements hook_schema().
+ */
+function msg_moderation_schema()
+{
+    $schema['msg_moderation'] = array(
+
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+            ),
+            'status' => array(
+                'type' => 'varchar',
+                'length' => 1,
+                'default' =>'0'
+            ),
+            'recipients_id' => array(
+                'type' => 'varchar',
+                'length' => 10,
+            ),
+            'mid' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+
+    return $schema;
+}
