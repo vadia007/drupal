@@ -4,7 +4,6 @@ function msg_moderation_menu() {
     $items['admin/structure/msg_moderation'] = array(
         'title' => t('Message moderation'),
         'description' => t('List of messages for moderation'),
-//        'page callback' => 'msg_moderation_form',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('msg_moderation_form'),
         'access arguments' => array('administer site configuration'),
@@ -87,9 +86,11 @@ function msg_moderation_form_submit($form, &$form_state) {
             foreach($selected as $mid){
                 $message = privatemsg_message_load($mid);
                 if($message->mid == $message->thread_id){
-                    privatemsg_new_thread(array(user_load(get_recipient_id($message->mid))), $message->subject, $message->body, array('author' => $message->author, 'new' => true));
+                    privatemsg_new_thread(array(user_load(get_recipient_id($message->mid))), $message->subject,
+                        $message->body, array('author' => $message->author, 'new' => true));
                 }else{
-                    $conf_message = privatemsg_reply($message->thread_id, $message->body, $options = array('author' => $message->author, 'reply' => true));
+                    $conf_message = privatemsg_reply($message->thread_id, $message->body,
+                        $options = array('author' => $message->author, 'reply' => true));
                     privatemsg_message_change_delete($conf_message['message']->mid, '1', $conf_message['message']->author);
                 }
             }
@@ -119,20 +120,30 @@ function update($update, $status){
 }
 
 function msg_moderation_privatemsg_message_insert($message) {
-    if((!isset($message->reply)) and (!isset($message->new))){
-        $status = '0';
-        insert_mid($message->mid, $status, $message->recipients_id);
+    if($message->author->uid != '1'){
+        if((!isset($message->reply)) and (!isset($message->new))){
+            $status = '0';
+            insert_mid($message->mid, $status, $message->recipients_id);
+        }
     }
 }
 
-function msg_moderation_privatemsg_message_presave_alter(&$message) {
+function mat_moderation($input){
+    $pattern = "/\w{0,5}[хx]([хx\s\!@#\$%\^&*+-\|\/]{0,6})[уy]([уy\s\!@#\$%\^&*+-\|\/]{0,6})[ёiлeеюийя]\w{0,7}|\w{0,6}[пp]([пp\s\!@#\$%\^&*+-\|\/]{0,6})[iие]([iие\s\!@#\$%\^&*+-\|\/]{0,6})[3зс]([3зс\s\!@#\$%\^&*+-\|\/]{0,6})[дd]\w{0,10}|[сcs][уy]([уy\!@#\$%\^&*+-\|\/]{0,6})[4чkк]\w{1,3}|\w{0,4}[bб]([bб\s\!@#\$%\^&*+-\|\/]{0,6})[lл]([lл\s\!@#\$%\^&*+-\|\/]{0,6})[yя]\w{0,10}|\w{0,8}[её][bб][лске@eыиаa][наи@йвл]\w{0,8}|\w{0,4}[еe]([еe\s\!@#\$%\^&*+-\|\/]{0,6})[бb]([бb\s\!@#\$%\^&*+-\|\/]{0,6})[uу]([uу\s\!@#\$%\^&*+-\|\/]{0,6})[н4ч]\w{0,4}|\w{0,4}[еeё]([еeё\s\!@#\$%\^&*+-\|\/]{0,6})[бb]([бb\s\!@#\$%\^&*+-\|\/]{0,6})[нn]([нn\s\!@#\$%\^&*+-\|\/]{0,6})[уy]\w{0,4}|\w{0,4}[еe]([еe\s\!@#\$%\^&*+-\|\/]{0,6})[бb]([бb\s\!@#\$%\^&*+-\|\/]{0,6})[оoаa@]([оoаa@\s\!@#\$%\^&*+-\|\/]{0,6})[тnнt]\w{0,4}|\w{0,10}[ё]([ё\!@#\$%\^&*+-\|\/]{0,6})[б]\w{0,6}|\w{0,4}[pп]([pп\s\!@#\$%\^&*+-\|\/]{0,6})[иeеi]([иeеi\s\!@#\$%\^&*+-\|\/]{0,6})[дd]([дd\s\!@#\$%\^&*+-\|\/]{0,6})[oоаa@еeиi]([oоаa@еeиi\s\!@#\$%\^&*+-\|\/]{0,6})[рr]\w{0,12}/u";
+    return preg_replace($pattern, t('[censor]'), $input);
+}
 
-    if((!isset($message->new)) and (!isset($message->reply))){
-        $recipients = $message->recipients;
-        foreach($recipients as $recipient){
-            $user_uid  = 'user_'.$recipient->uid;
-            $message->recipients_id = $recipient->uid;
-            unset($message->recipients["$user_uid"]);
+function msg_moderation_privatemsg_message_presave_alter(&$message) {
+    if($message->author->uid != '1'){
+        if((!isset($message->new)) and (!isset($message->reply))){
+            $message->subject = mat_moderation($message->subject);
+            $message->body = mat_moderation($message->body);
+            $recipients = $message->recipients;
+            foreach($recipients as $recipient){
+                $user_uid  = 'user_'.$recipient->uid;
+                $message->recipients_id = $recipient->uid;
+                unset($message->recipients["$user_uid"]);
+            }
         }
     }
 }
@@ -155,7 +166,6 @@ function get_array_mid($status){
         ->fetchCol(0);
     return $mid;
 }
-
 
 function get_moderated_messages(){
     $mid = get_array_mid('0');

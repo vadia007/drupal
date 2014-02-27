@@ -157,3 +157,9 @@ function bartik_field__taxonomy_term_reference($variables) {
 function ky100_preprocess_html(&$vars) {
     drupal_add_css(path_to_theme() . '/css/ie8.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'gte IE 7', '!IE' => FALSE), 'preprocess' => FALSE));
 }
+function ky100_preprocess_captcha(&$vars) {
+    if ($vars['element']['#captcha_type'] == 'image_captcha/Image' && isset($vars['element']['captcha_widgets'])) {
+        $vars['element']['captcha_widgets']['captcha_response']['#field_prefix'] = $vars['element']['captcha_widgets']['captcha_image']['#markup'];
+        $vars['element']['captcha_widgets']['captcha_image']['#access'] = FALSE;
+    }
+}

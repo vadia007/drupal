@@ -43,6 +43,9 @@ function catalog_form_form($form, &$form_state){
         '#required' => TRUE,
         '#resizable' => FALSE
     );
+    $form['file'] = array(
+        '#type' => 'file',
+    );
     $form['time'] = array(
         '#type' => 'textfield',
         '#title' => t('Response time'),
@@ -64,6 +67,10 @@ function catalog_form_form($form, &$form_state){
         '#type' => 'checkbox',
         '#title' => t('I agree to receive responses from the organizations on the phone'),
         '#default_value' => TRUE,
+    );
+    $form['captcha'] = array(
+        '#type' => 'captcha',
+        '#captcha_type' => 'image_captcha/Image',
     );
     $form['submit'] = array(
         '#type' => 'submit',
@@ -146,6 +153,18 @@ function catalog_form_form_validate($form, &$form_state){
     if (!is_valid_email($form_state['values']['email'])){
         form_set_error('email', t('This email is not valid'));
     }
+    $max_size = 5*1024*1024;
+    if($_FILES['files']['size'] != 0){
+        if(($_FILES['files']['size']['file']) > $max_size){
+            form_set_error('file', t('The file size must be less than').' 5mb');
+        }
+    }
+    $validators = array(
+        'file_validate_extensions' => array('png gif jpg jpeg doc docx xls xlsx rtf txt pdf'),
+    );
+    if ($file = file_save_upload('file', $validators, 'public://upload_files/')) {
+        $form_state['values']['file'] = $file;
+    }
 }
 
 function is_valid_email($email){
@@ -156,7 +175,6 @@ function get_users($tid){
     $query = db_select('field_data_field_category', 'c')
         ->fields('c', array('entity_id'))
         ->condition('c.field_category_tid', $tid, '=')
-    //->range(0, 10)
         ->execute();
     while ($user = $query->fetchassoc()){
         $users[] = $user['entity_id'];
@@ -200,6 +218,13 @@ function catalog_form_form_submit($form, &$form_state) {
             ."\n".t("Phone").": ".$form_state['values']['phone']
             ."\n".t("E-mail").": ".$form_state['values']['email']
             ."\n".t("Question").": ".$form_state['values']['question'];
+        if(isset($form_state['values']['file'])){
+            $file = $form_state['values']['file'];
+            $file->status = FILE_STATUS_PERMANENT;
+            file_save($file);
+            $file_url = file_create_url($file->uri);
+            $message .="\n".t("File").": ".l($file->filename, $file_url);
+        }
 //        $message = "<table><tr><td>".t('Sender').": </td><td>".$form_state['values']['name']
 //            ."</td></tr><tr><td>".t("Phone").": </td><td>".$form_state['values']['phone']
 //            ."</td></tr><tr><td>".t("E-mail").": </td><td>".$form_state['values']['email']
@@ -223,7 +248,8 @@ function catalog_form_form_submit($form, &$form_state) {
         }
         if($send){
             drupal_set_message(t('Your question has been sent successfully'));
-        }}
+        }
+    }
 }
 
 function guest_reply_form_submit($form, &$form_state){

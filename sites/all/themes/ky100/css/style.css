@@ -418,7 +418,7 @@ div.view-display-id-catalog_child{
 }
 div#block-catalog-form-catalog-form{
     float: right;
-    width: 457px;
+    width: 450px;
     height: 650px;
 }
 div#block-ky100-term-parent{
@@ -646,7 +646,7 @@ div.privatemsg-message-column{
 a#edit-cancel{
     display: none;
 }
-form#privatemsg-new textarea{
+.boxes form#privatemsg-new textarea{
     width: 464px;
 }
 ul.action-links{
@@ -885,4 +885,27 @@ td.empty{
 #guest-reply-form .form-submit{
     display: block;
     margin: 0 auto;
+}
+#privatemsg-new{
+    width: 450px;
+    float: left;
+}
+#privatemsg-new fieldset{
+    display: none;
+}
+ input[type='text'],
+#privatemsg-new textarea{
+    width: 430px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#privatemsg-new .form-actions{
+    text-align: center;
+}
+div.captcha input[type='text']#edit-captcha-response{
+    width: 290px;
+    float: right;
+}
+.captcha .description{
+    text-align: center;
 }
