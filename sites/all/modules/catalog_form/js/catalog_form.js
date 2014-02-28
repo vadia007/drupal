@@ -1,6 +1,8 @@
 (function($){
     $(document).ready(function(){
-
+        var default_value =  $("#phone").val();
+        $("#phone").mask("+7 (999) 999-9999");
+        $("#phone").val(default_value);
         var tid = $("#hidden").val();
         if(tid != ''){
             var cat = $('[tid ='+tid+']').text();

@@ -1,6 +1,7 @@
 <?php
 $module_path = drupal_get_path('module', 'catalog_form');
 drupal_add_js($module_path . '/js/catalog_form.js', 'file');
+drupal_add_js($module_path . '/js/phone.js', 'file');
 /**
  * Implements hook_form().
  */
@@ -29,6 +30,7 @@ function catalog_form_form($form, &$form_state){
         '#type'	=> 'textfield',
         '#title' => t('Phone'),
         '#default_value' => t('Phone'),
+        '#attributes' => array('id' => array('phone')),
     );
     $form['email'] = array(
         '#type'	=> 'textfield',
