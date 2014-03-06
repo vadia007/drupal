@@ -4,24 +4,65 @@
  */
 function msg_moderation_schema()
 {
-    $schema['msg_moderation'] = array(
+    $schema['guest_reply'] = array(
 
         'fields' => array(
             'id' => array(
                 'type' => 'serial',
             ),
-            'status' => array(
+            'mid' => array(
                 'type' => 'varchar',
-                'length' => 1,
-                'default' =>'0'
+                'length' => 255,
             ),
-            'recipients_id' => array(
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'm_phone' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'h_phone' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    $schema['back_response'] = array(
+
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+            ),
+            'code' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'uid' => array(
                 'type' => 'varchar',
                 'length' => 10,
+            ),
+            'email_to' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'm_phone' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'h_phone' => array(
+                'type' => 'varchar',
+                'length' => 255,
             ),
             'mid' => array(
                 'type' => 'varchar',
                 'length' => 255,
+            ),
+            'status' => array(
+                'type' => 'varchar',
+                'length' => 1,
+                'default' => '0'
             ),
         ),
         'primary key' => array('id'),

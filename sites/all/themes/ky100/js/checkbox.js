@@ -91,9 +91,9 @@ var Custom = {
     pushed: function() {
         element = this.nextSibling;
         if(element.checked == true && element.type == "checkbox") {
-            this.style.backgroundPosition = "0 -" + checkboxHeight*3 + "px";
+            this.style.backgroundPosition = "0 -" + checkboxHeight + "px";
         } else if(element.checked == true && element.type == "radio") {
-            this.style.backgroundPosition = "0 -" + radioHeight*3 + "px";
+            this.style.backgroundPosition = "0 -" + radioHeight + "px";
         } else if(element.checked != true && element.type == "checkbox") {
             this.style.backgroundPosition = "0 -" + checkboxHeight + "px";
         } else {

@@ -42,11 +42,24 @@ function ky100_theme() {
 
 function ky100_form_alter(&$form, $form_state, $form_id)  {
     global $user;
-    if ($form_id == 'user_profile_form' and $user->uid == 1){
-        $form['new_message'] = array (
-            '#markup' => l(t('Write new message'), 'messages/new'),
-            '#weight' => -1
-        );
+    if ($form_id == 'user_profile_form'){
 
+        $form['messages'] = array (
+            '#markup' => l(t('Return to personal cabinet'), 'messages'),
+            '#weight' => -1,
+            '#prefix' => '<div>',
+            '#suffix' => '</div>'
+        );
+        unset($form['field_pravila']);
+        unset($form['field_dannie']);
+        unset($form['field_mess_conf']);
+        if($user->uid == 1){
+            $form['new_message'] = array (
+                '#markup' => l(t('Write new message'), 'messages/new'),
+                '#weight' => -2,
+                '#prefix' => '<div>',
+                '#suffix' => '</div>'
+            );
+        }
     }
 }

@@ -4,7 +4,7 @@
  */
 function catalog_form_schema()
 {
-    $schema['guest_reply'] = array(
+    $schema['catalog_msg'] = array(
 
         'fields' => array(
             'id' => array(
@@ -22,7 +22,11 @@ function catalog_form_schema()
                 'type' => 'varchar',
                 'length' => 255,
             ),
-            'phone' => array(
+            'm_phone' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'h_phone' => array(
                 'type' => 'varchar',
                 'length' => 255,
             ),
@@ -33,13 +37,24 @@ function catalog_form_schema()
             'question' => array(
                 'type' => 'text',
             ),
+            'file' => array(
+                'type' => 'text',
+            ),
             'time' => array(
                 'type' => 'varchar',
                 'length' => 255,
             ),
-            'mid' => array(
+            'users' => array(
+                'type' => 'text',
+            ),
+            'status' => array(
                 'type' => 'varchar',
-                'length' => 255,
+                'length' => 1,
+                'default' =>'0'
+            ),
+            'author_id' => array(
+                'type' => 'varchar',
+                'length' => 10,
             ),
         ),
         'primary key' => array('id'),

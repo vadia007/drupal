@@ -1,8 +1,11 @@
 (function($){
     $(document).ready(function(){
         var default_value =  $("#phone").val();
+        var default_value_h =  $("#h_phone").val();
         $("#phone").mask("+7 (999) 999-9999");
         $("#phone").val(default_value);
+        $("#h_phone").mask("999-999");
+        $("#h_phone").val(default_value_h);
         var tid = $("#hidden").val();
         if(tid != ''){
             var cat = $('[tid ='+tid+']').text();
@@ -22,7 +25,7 @@
 
             $(".privatemsg-message").wrapAll("<div id='message-list'></div>");
             $("#privatemsg-new").before("<a href='#' id='reply_msg'>Ответить</a>");
-            $("#privatemsg-new").before("<a href='/messages' id='messages_l'>Сообщения</a>");
+            $("#privatemsg-new").before("<a href='/messages' id='messages_l'>Входящие</a>");
             $("#privatemsg-new").wrap("<div class='boxes'></div>");
             $("#privatemsg-new").after("<div class='mask'></div>");
             $("#privatemsg-new").addClass("window");

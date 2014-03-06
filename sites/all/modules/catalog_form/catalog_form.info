@@ -1,3 +1,4 @@
 name = Catalog form
 description = Catalog form
 core = 7.x
+package = Ky100

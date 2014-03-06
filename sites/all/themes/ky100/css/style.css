@@ -506,7 +506,7 @@ div#block-catalog-form-catalog-form div.form-type-checkbox{
     padding: 4px 0 4px 7px;
 }
 div#block-catalog-form-catalog-form div.form-type-checkbox label{
-    padding-left: 10px;
+    padding-left: 3px;
 }
 div#block-catalog-form-catalog-form input[type='submit']{
     background: url("../images/button_cat_form.png") no-repeat;
@@ -618,27 +618,29 @@ div.privatemsg-message-column{
 #reply_msg{
     background: url("../images/reply.png") no-repeat;
     display: block;
-    width: 139px;
+    width: 166px;
     height: 59px;
     font-size: 24px;
     text-transform: uppercase;
     color: #fff;
     font-family: a_futuricabookregular;
-    padding: 23px 0 0 27px;
+    padding: 23px 0 0 0px;
     float: left;
     margin-left: 350px;
+    text-align: center;
 }
 #messages_l{
     background: url("../images/messages.png") no-repeat;
     display: block;
-    width: 172px;
+    width: 194px;
     height: 59px;
     font-size: 24px;
     text-transform: uppercase;
     color: #fff;
     font-family: a_futuricabookregular;
-    padding: 23px 0 0 22px;
+    padding: 23px 0 0 0px;
     float: left;
+    text-align: center;
 }
 #privatemsg-new input.form-autocomplete{
     background: url("../images/input.png") no-repeat;
@@ -893,7 +895,7 @@ td.empty{
 #privatemsg-new fieldset{
     display: none;
 }
- input[type='text'],
+#privatemsg-new input[type='text'],
 #privatemsg-new textarea{
     width: 430px;
     padding-left: 10px;
@@ -908,4 +910,24 @@ div.captcha input[type='text']#edit-captcha-response{
 }
 .captcha .description{
     text-align: center;
+}
+a.user-mes{
+    display: block;
+}
+#back_response{
+    margin-top: 150px;
+    text-align: center;
+}
+#back_response a{
+    text-decoration: underline;
+}
+div#block-catalog-form-catalog-form input[type="text"]#phone{
+    width: 190px;
+    float: left;
+    margin-bottom: 5px;
+}
+div#block-catalog-form-catalog-form input[type="text"]#h_phone{
+    width: 190px;
+    float: right;
+    margin-bottom: 5px;
 }

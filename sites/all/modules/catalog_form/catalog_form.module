@@ -3,6 +3,33 @@ $module_path = drupal_get_path('module', 'catalog_form');
 drupal_add_js($module_path . '/js/catalog_form.js', 'file');
 drupal_add_js($module_path . '/js/phone.js', 'file');
 /**
+ * Implements hook_menu().
+ */
+function catalog_form_menu() {
+    $items = array();
+    $items['back_response/%code'] = array(
+//        'title'   => 'Back response',
+        'page callback'    => 'back_response',
+        'page arguments'   => array(1),
+        'access arguments' => array('access content'),
+        'file'             => 'back_response.frontend.inc',
+    );
+    return $items;
+}
+
+function code_load($code) {
+
+    $result = db_select('back_response', 'br')
+        ->fields('br')
+        ->condition('br.code', $code)
+        ->execute()
+        ->fetchObject();
+
+    return $result ? $result : FALSE;
+
+}
+
+/**
  * Implements hook_form().
  */
 function catalog_form_form($form, &$form_state){
@@ -26,11 +53,17 @@ function catalog_form_form($form, &$form_state){
         '#default_value' => t('Name surname first name'),
         '#required' => TRUE,
     );
-    $form['phone'] = array(
+    $form['m_phone'] = array(
         '#type'	=> 'textfield',
-        '#title' => t('Phone'),
-        '#default_value' => t('Phone'),
+        '#title' => t('Mobile phone'),
+        '#default_value' => t('Mobile phone'),
         '#attributes' => array('id' => array('phone')),
+    );
+    $form['h_phone'] = array(
+        '#type'	=> 'textfield',
+        '#title' => t('Home phone'),
+        '#default_value' => t('Home phone'),
+        '#attributes' => array('id' => array('h_phone')),
     );
     $form['email'] = array(
         '#type'	=> 'textfield',
@@ -59,16 +92,19 @@ function catalog_form_form($form, &$form_state){
         '#type' => 'checkbox',
         '#title' => t('I agree to send a message to organizations'),
         '#default_value' => TRUE,
+        '#required' => TRUE,
     );
     $form['consent_email'] = array(
         '#type' => 'checkbox',
         '#title' => t('I agree to receive responses from organizations in the email'),
         '#default_value' => TRUE,
+        '#required' => TRUE,
     );
     $form['consent_phone'] = array(
         '#type' => 'checkbox',
         '#title' => t('I agree to receive responses from the organizations on the phone'),
         '#default_value' => TRUE,
+        '#required' => TRUE,
     );
     $form['captcha'] = array(
         '#type' => 'captcha',
@@ -105,7 +141,6 @@ function guest_reply_form($form, &$form_state){
  * Implements hook_block_info().
  */
 function catalog_form_block_info() {
-    // This example comes from node.module.
     $blocks['catalog_form'] = array(
         'info' => t('Catalog form'),
     );
@@ -167,6 +202,15 @@ function catalog_form_form_validate($form, &$form_state){
     if ($file = file_save_upload('file', $validators, 'public://upload_files/')) {
         $form_state['values']['file'] = $file;
     }
+    if( $form_state['values']['question'] == $form['question']['#default_value']){
+        form_set_error('question', t('The field question is required'));
+    }
+    if( $form_state['values']['name'] == $form['name']['#default_value']){
+        form_set_error('name', t('The field name is required'));
+    }
+    if( $form_state['values']['tid'] == ''){
+        form_set_error('category', t('You do not choose a category'));
+    }
 }
 
 function is_valid_email($email){
@@ -204,75 +248,101 @@ function get_author(){
 function get_message($mid){
     $query = db_select('guest_reply', 'g')
         ->fields('g')
-        ->condition('g.mid', $mid, '=')
+        ->condition('mid', $mid, '=')
         ->execute()
         ->fetchassoc();
     return $query;
 }
 
 function catalog_form_form_submit($form, &$form_state) {
+    global $user;
     $users = get_users($_POST['tid']);
     if (!$users){
         drupal_set_message(t('Users not found in this category'));
 
     } else{
-        $message = t('Sender').": ".$form_state['values']['name']
-            ."\n".t("Phone").": ".$form_state['values']['phone']
-            ."\n".t("E-mail").": ".$form_state['values']['email']
-            ."\n".t("Question").": ".$form_state['values']['question'];
-        if(isset($form_state['values']['file'])){
+        if($form_state['values']['file'] != ''){
             $file = $form_state['values']['file'];
             $file->status = FILE_STATUS_PERMANENT;
             file_save($file);
-            $file_url = file_create_url($file->uri);
-            $message .="\n".t("File").": ".l($file->filename, $file_url);
         }
-//        $message = "<table><tr><td>".t('Sender').": </td><td>".$form_state['values']['name']
-//            ."</td></tr><tr><td>".t("Phone").": </td><td>".$form_state['values']['phone']
-//            ."</td></tr><tr><td>".t("E-mail").": </td><td>".$form_state['values']['email']
-//            ."</td></tr><tr><td>".t("Question").": </td><td>".$form_state['values']['question']."</td></tr></table>";
-        foreach($users as $user){
-            $send = privatemsg_new_thread(array(user_load($user)), t('Theme'), $message);
-            $mid = $send['message']->mid;
-            //    echo $mid;
-            db_insert('guest_reply')
-                ->fields(array(
-                'category' => $form_state['values']['category'],
-                'tid' => $form_state['values']['tid'],
-                'name' => $form_state['values']['name'],
-                'phone' => $form_state['values']['phone'],
-                'email' => $form_state['values']['email'],
-                'question' => $form_state['values']['question'],
-                'time' => $form_state['values']['time'],
-                'mid' => $mid,
-            ))
-                ->execute();
-        }
-        if($send){
+        $ser_users = serialize($users);
+        $result = db_insert('catalog_msg')
+            ->fields(array(
+            'category' => $form_state['values']['category'],
+            'tid' => $form_state['values']['tid'],
+            'name' => $form_state['values']['name'],
+            'm_phone' => $form_state['values']['m_phone'],
+            'h_phone' => $form_state['values']['h_phone'],
+            'email' => $form_state['values']['email'],
+            'question' => $form_state['values']['question'],
+            'file' => $form_state['values']['file'] ? serialize($form_state['values']['file']) : '',
+            'time' => $form_state['values']['time'],
+            'users' => $ser_users,
+            'author_id' => $user->uid
+        ))
+            ->execute();
+        if($result){
             drupal_set_message(t('Your question has been sent successfully'));
         }
     }
 }
-
+function insert_back_response($code, $uid, $email, $m_phone, $h_phone, $mid){
+    db_insert('back_response')
+        ->fields(array(
+        'code' => $code,
+        'uid' => $uid,
+        'email_to' => $email,
+        'm_phone' => $m_phone,
+        'h_phone' => $h_phone,
+        'mid' => $mid
+    ))
+        ->execute();
+}
 function guest_reply_form_submit($form, &$form_state){
+    global $user;
+    $user_params = user_load($user->uid);
     $mid = (int)arg(2);
     $message = get_message($mid);
-    $params = $form_state['values'];
+    $code = md5(microtime());
+    $params['confidence'] = confidence($user_params);
+    $params['link'] = url( "back_response/$code", array('absolute' => true, 'alias' => false ));
+    $params['values'] = $form_state['values'];
     $mail = drupal_mail('catalog_form', 'key', trim($message['email']), language_default(), $params);
     if ($mail['result']){
         drupal_set_message(t('Your message has been sent successfully'));
+        insert_back_response($code, $user->uid, trim($message['email']), $message['m_phone'], $message['h_phone'], $mid);
     }
     else {
         drupal_set_message(t('Message was not sent'), 'error');
     }
 }
+
 function catalog_form_mail($key, &$message, $params) {
     if ($key == 'key') {
         global $base_url;
+        $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
         $message['subject'] = t('The answer from site:').' '.$base_url;
-        $message['body'][] = $params['message'];
+        $message['body'][] = "<p>".mat_moderation($params['values']['message'])."</p>"
+            ."<p>".$params['confidence']."</p>"
+            ."<p>".t('To give a user access to your personal information, click here:')."</p>"
+            .$params['link'];
+
     }
 }
+
+function confidence($user){
+    $message = t('Confidence for company');
+    if(empty($user->field_name) or empty($user->field_inn) or empty($user->field_ogrn) or empty($user->field_okpo)
+        or empty($user->field_okpd) or empty($user->field_uridicheskiy) or empty($user->field_fakticheskiy)
+        or empty($user->field_adress) or empty($user->field_phone)){
+        $message .= "<span style='color: red; font-size: 22px'> *</span>";
+    }else{
+        $message .= "<span style='color: red; font-size: 22px'> *******</span>";
+    }
+    return $message;
+}
+
 /**
  * Implements hook_user_login
  */
@@ -299,6 +369,13 @@ function catalog_form_theme() {
         'user_links' => array(
             'template' => 'user_links',
             'path' => $module_path,
+        ),
+        'back_response' => array(
+            'template' => 'back_response',
+            'path' => $module_path,
+            'variables' => array(
+                'name' => NULL,
+            ),
         )
     );
 }
