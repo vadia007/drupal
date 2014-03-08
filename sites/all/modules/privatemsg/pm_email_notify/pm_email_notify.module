@@ -73,7 +73,7 @@ function pm_email_notify_mail($key, &$message, $params) {
         // Custom token to avoid custom token handling.
         'privatemsg-display-invalid' => FALSE,
       );
-
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
       $message['subject'] = trim(token_replace(variable_get('pm_email_notify_subject', 'New private message at [site:name].'), $data, $options));
       $message['body'][] = trim(token_replace(variable_get('pm_email_notify_body', _pm_email_notify_default_body()), $data, $options));
       break;

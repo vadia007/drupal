@@ -8,9 +8,9 @@ body {
     padding: 0;
     border: 0;
     outline: 0;
-    background-color: #c0c0c0;
     height: 100%;
     font-family: Arial;
+    background: url("../images/backgraund2.png") repeat-y top center #c0c0c0;
 }
 a:link,
 a:visited {
@@ -601,7 +601,8 @@ div#message-list{
     width: 444px;
     height: 314px;
     background: url("../images/message-list.png") no-repeat;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: block;
     float: left;
 }
@@ -611,6 +612,7 @@ table.sticky-header{
 div.privatemsg-message-column{
     width: 88%;
     padding-right: 10px;
+    word-wrap: break-word;
 }
 #message-list p{
     font-size: 14px;
@@ -930,4 +932,10 @@ div#block-catalog-form-catalog-form input[type="text"]#h_phone{
     width: 190px;
     float: right;
     margin-bottom: 5px;
+}
+#privatemsg-delete input.form-checkbox{
+    display: inline;
+}
+#privatemsg-delete .checkbox{
+    background: none;
 }

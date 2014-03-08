@@ -86,11 +86,11 @@ function msg_moderation_form_submit($form, &$form_state) {
             $conf_messages = get_confirm_msg($selected);
             foreach($conf_messages as $message){
                 $users = unserialize($message['users']);
-                $message['body'] = t('Sender').": ".$message['name']
+                $message['body'] = "</div>".t('Sender').": ".$message['name']."</div>"
 //                    ."\n".t("Mobile phone").": ".$message['m_phone']
 //                    ."\n".t("Home phone").": ".$message['h_phone']
 //                    ."\n".t("E-mail").": ".$message['email']
-                    ."\n".t("Question").": ".$message['question'];
+                    ."\n"."<div>".t("Question").": ".$message['question']."</div>";
                 if($message['file'] != ''){
                     $file = unserialize($message['file']);
                     $file_url = file_create_url($file->uri);
@@ -98,8 +98,15 @@ function msg_moderation_form_submit($form, &$form_state) {
                 }
                 $author = user_load($message['author_id']);
                 foreach($users as $uid){
-                    $new_message = privatemsg_new_thread(array(user_load($uid)), t('Theme'), $message['body'], array('author' => $author, 'new' => true));
-                    $array_mid[] = array('mid' => $new_message['message']->mid, 'email' => $message['email'], 'm_phone' => $message['m_phone'], 'h_phone' => $message['h_phone']);
+                    $new_message = privatemsg_new_thread(array(user_load($uid)), t('Theme'), $message['body'],
+                        array('author' => $author, 'new' => true));
+                    $array_mid[] = array(
+                        'mid' => $new_message['message']->mid,
+                        'email' => $message['email'],
+                        'm_phone' => $message['m_phone'],
+                        'h_phone' => $message['h_phone'],
+                        'author_id' => $message['author_id'],
+                        'recipient_id' => $uid);
                 }
                 guest_reply_insert($array_mid);
             }
@@ -110,7 +117,7 @@ function msg_moderation_form_submit($form, &$form_state) {
     }
 }
 function guest_reply_insert($array_mid){
-    $query = db_insert('guest_reply')->fields(array('mid', 'email', 'm_phone', 'h_phone'));
+    $query = db_insert('guest_reply')->fields(array('mid', 'email', 'm_phone', 'h_phone', 'author_id', 'recipient_id'));
     foreach ($array_mid as $array) {
         $query->values($array);
     }
@@ -140,14 +147,43 @@ function mat_moderation($input){
 }
 
 function msg_moderation_privatemsg_message_presave_alter(&$message) {
-    if($message->author->uid != '1'){
-        if(!isset($message->new)){
-            $message->subject = mat_moderation($message->subject);
-            $message->body = mat_moderation($message->body);
+    if(!isset($message->new)){
+        $message->subject = mat_moderation($message->subject);
+        $message->body = mat_moderation($message->body);
+        if(!get_br_status($message->thread_id)){
+            global $user;
+            if($user->uid != '0'){
+                $mess = get_message($message->thread_id);
+                if($mess['author_id'] != $user->uid){
+                    $user_params = user_load($user->uid);
+                    $code = md5(microtime());
+                    $confidence = confidence($user_params);
+                    $link = url( "back_response/$code", array('absolute' => true, 'alias' => false ));
+                    $message->body .= "\n"."\n"."<p>".$confidence."</p>"
+                        ."\n"."<p>".t('To give a user access to your personal information, click here:')."</p>"
+                        ."\n".$link;
+                    insert_back_response($code, $user->uid, $mess['email'], $mess['m_phone'], $mess['h_phone'], $mess['mid'], $mess['author_id']);
+                    update_br_status('1', $message->thread_id);
+                }
+            }
         }
     }
 }
+function get_br_status($mid){
+    $query = db_select('guest_reply', 'g')
+        ->fields('g', array('br_send'))
+        ->condition('mid', $mid, '=')
+        ->execute()
+        ->fetchCol();
+    return $query['0'];
+}
 
+function update_br_status($status, $mid){
+    db_update('guest_reply')
+        ->fields(array('br_send' => $status,))
+        ->condition ('mid', $mid, '=')
+        ->execute();
+}
 function get_moderated_messages(){
     $query = db_select('catalog_msg', 'cm')
         ->extend('PagerDefault');

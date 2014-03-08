@@ -205,6 +205,9 @@ function catalog_form_form_validate($form, &$form_state){
     if( $form_state['values']['question'] == $form['question']['#default_value']){
         form_set_error('question', t('The field question is required'));
     }
+    if( $form_state['values']['m_phone'] == $form['m_phone']['#default_value']){
+        form_set_error('m_phone', t('The field mobile phone is required'));
+    }
     if( $form_state['values']['name'] == $form['name']['#default_value']){
         form_set_error('name', t('The field name is required'));
     }
@@ -273,7 +276,7 @@ function catalog_form_form_submit($form, &$form_state) {
             'tid' => $form_state['values']['tid'],
             'name' => $form_state['values']['name'],
             'm_phone' => $form_state['values']['m_phone'],
-            'h_phone' => $form_state['values']['h_phone'],
+            'h_phone' => $form_state['values']['h_phone'] != $form['h_phone']['#default_value'] ? $form_state['values']['h_phone'] : '',
             'email' => $form_state['values']['email'],
             'question' => $form_state['values']['question'],
             'file' => $form_state['values']['file'] ? serialize($form_state['values']['file']) : '',
@@ -287,7 +290,7 @@ function catalog_form_form_submit($form, &$form_state) {
         }
     }
 }
-function insert_back_response($code, $uid, $email, $m_phone, $h_phone, $mid){
+function insert_back_response($code, $uid, $email, $m_phone, $h_phone, $mid, $recipient_id){
     db_insert('back_response')
         ->fields(array(
         'code' => $code,
@@ -295,7 +298,8 @@ function insert_back_response($code, $uid, $email, $m_phone, $h_phone, $mid){
         'email_to' => $email,
         'm_phone' => $m_phone,
         'h_phone' => $h_phone,
-        'mid' => $mid
+        'mid' => $mid,
+        'recipient_id' => $recipient_id
     ))
         ->execute();
 }
@@ -306,12 +310,17 @@ function guest_reply_form_submit($form, &$form_state){
     $message = get_message($mid);
     $code = md5(microtime());
     $params['confidence'] = confidence($user_params);
-    $params['link'] = url( "back_response/$code", array('absolute' => true, 'alias' => false ));
     $params['values'] = $form_state['values'];
+    if(!get_br_status($mid)){
+        $params['link'] = url( "back_response/$code", array('absolute' => true, 'alias' => false ));
+    }else{
+        $params['link'] = '';
+    }
     $mail = drupal_mail('catalog_form', 'key', trim($message['email']), language_default(), $params);
     if ($mail['result']){
         drupal_set_message(t('Your message has been sent successfully'));
-        insert_back_response($code, $user->uid, trim($message['email']), $message['m_phone'], $message['h_phone'], $mid);
+        insert_back_response($code, $user->uid, trim($message['email']), $message['m_phone'], $message['h_phone'], $mid, '0');
+        update_br_status('1', $mid);
     }
     else {
         drupal_set_message(t('Message was not sent'), 'error');
@@ -324,9 +333,10 @@ function catalog_form_mail($key, &$message, $params) {
         $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
         $message['subject'] = t('The answer from site:').' '.$base_url;
         $message['body'][] = "<p>".mat_moderation($params['values']['message'])."</p>"
-            ."<p>".$params['confidence']."</p>"
-            ."<p>".t('To give a user access to your personal information, click here:')."</p>"
-            .$params['link'];
+            ."<p>".$params['confidence']."</p>";
+        if($params['link'])
+            $message['body'][] .="<p>".t('To give a user access to your personal information, click here:')."</p>"
+                .$params['link'];
 
     }
 }

@@ -26,6 +26,19 @@ function msg_moderation_schema()
                 'type' => 'varchar',
                 'length' => 255,
             ),
+            'author_id' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'recipient_id' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'br_send' => array(
+                'type' => 'varchar',
+                'length' => 1,
+                'default' => '0'
+            ),
         ),
         'primary key' => array('id'),
     );
@@ -63,6 +76,10 @@ function msg_moderation_schema()
                 'type' => 'varchar',
                 'length' => 1,
                 'default' => '0'
+            ),
+            'recipient_id' => array(
+                'type' => 'varchar',
+                'length' => 10,
             ),
         ),
         'primary key' => array('id'),
