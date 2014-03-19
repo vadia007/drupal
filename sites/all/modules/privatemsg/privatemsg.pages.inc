@@ -761,7 +761,7 @@ function privatemsg_autocomplete($string) {
  * @see privatemsg_thread_load()
  */
 function  privatemsg_view($thread) {
-    drupal_set_title($thread['subject']);
+    drupal_set_title(t('Personal cabinet'));
 
     $content = array(
         '#thread' => $thread,

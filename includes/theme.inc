@@ -2856,7 +2856,7 @@ function template_preprocess_username(&$variables) {
   if (empty($account->uid)) {
    $variables['uid'] = 0;
    if (theme_get_setting('toggle_comment_user_verification')) {
-     $variables['extra'] = ' (' . t('not verified') . ')';
+     $variables['extra'] = '';//' (' . t('not verified') . ')';
    }
   }
   else {

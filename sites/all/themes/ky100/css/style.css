@@ -142,7 +142,6 @@ div#footer{
     margin: 0 auto;
     position: relative;
 
-
 }
 div#footer a#catalog{
     background: url("../images/button_kat.png") no-repeat;
@@ -151,11 +150,12 @@ div#footer a#catalog{
     margin-left: 17px;
     font-size: 63px;
     text-transform: uppercase;
-    padding: 15px 0 0 260px;
+    padding: 15px 0 0 0px;
     color: #fff;
-    width: 593px;
+    width: 853px;
     float: left;
     font-family: StandardPosterCTTRegular;
+    text-align: center;
 }
 div#footer a.sign_in{
     background: url("../images/button_signin.png") no-repeat;
@@ -247,13 +247,14 @@ input[type="submit"]{
     color: #fff;
     border: 0;
     height: 52px;
-    width: 252px;
+    width: 364px;
     margin: 0;
     font-size: 24px;
-    padding: 18px 0 0 112px;
+    padding: 18px 0 0 0px;
     text-transform: uppercase;
     margin: 0 auto;
     font-family: a_futuricabookregular;
+    text-align: center;
 }
 div.toboggan-unified div#login-message{
     color: #b9b9b8;
@@ -283,8 +284,12 @@ form#user-pass div.form-type-textfield{
     text-align: center;
     margin: 0 auto;
 }
+
 form#user-pass div.form-type-textfield input{
     width: 360px;
+}
+form#user-pass .form-actions{
+    text-align: center;
 }
 div.toboggan-unified form#user-register-form{
     text-align: center;
@@ -363,27 +368,29 @@ body.page-node-1 div#content{
 }
 a.about{
     background: url("../images/button_signin.png") no-repeat;
-    width: 198px;
+    width: 315px;
     height: 63px;
     display: block;
     float: left;
     text-transform: uppercase;
     font-size: 24px;
     color: #fff;
-    padding: 22px 0 0 117px;
+    padding: 22px 0 0 0px;
     font-family: a_futuricabookregular;
+    text-align: center;
 }
 a.support{
     background: url("../images/button_signin.png") no-repeat;
-    width: 280px;
+    width: 315px;
     height: 64px;
     display: block;
     float: left;
     text-transform: uppercase;
     font-size: 24px;
     color: #fff;
-    padding: 21px 0 0 35px;
+    padding: 21px 0 0 0px;
     font-family: a_futuricabookregular;
+    text-align: center;
 
 }
 form#user-login span.checkbox{
@@ -475,13 +482,11 @@ div#block-catalog-form-catalog-form input[type='text']{
     width: 420px;
     height: 32px;
     font-size: 12px;
-    text-transform: uppercase;
     padding: 4px 15px 0 15px;
 }
 div#block-catalog-form-catalog-form textarea{
     width: 420px;
     font-size: 12px;
-    text-transform: uppercase;
     padding: 10px 15px 0 15px;
     height: 130px;
 }
@@ -491,6 +496,7 @@ div#block-catalog-form-catalog-form div.form-item-time input[type='text']{
 div#block-catalog-form-catalog-form div.form-item-time{
     width: 270px;
     float: left;
+    display: none;
 }
 div.hour{
     width: 180px;
@@ -499,6 +505,7 @@ div.hour{
     font-size: 12px;
     text-transform: uppercase;
     padding-top: 12px;
+    display: none;
 }
 div#block-catalog-form-catalog-form div.form-type-checkbox{
     font-size: 12px;
@@ -823,7 +830,7 @@ form.window .form-actions{
     margin-left: 7px;
 }
 td.privatemsg-list-subject{
-    width: 35%;
+    width: 38%;
     height: 30px;
 }
 td.privatemsg-list-date{
@@ -907,7 +914,7 @@ td.empty{
     text-align: center;
 }
 div.captcha input[type='text']#edit-captcha-response{
-    width: 290px;
+    width: 252px;
     float: right;
 }
 .captcha .description{
@@ -938,4 +945,95 @@ div#block-catalog-form-catalog-form input[type="text"]#h_phone{
 }
 #privatemsg-delete .checkbox{
     background: none;
+}
+.privatemsg-message-body a {
+    text-decoration: underline;
+}
+.privatemsg-header-subject,
+.privatemsg-list-subject{
+    padding-left: 17px;
+}
+#privatemsg-list .form-type-checkbox,
+#privatemsg-list th input.form-checkbox{
+    display: none;
+}
+#time_left{
+    display: block;
+    float: left;
+    margin-left: 360px;
+    font-family: a_futuricabookregular;
+    font-size: 19px;
+    margin-top: 28px;
+    text-transform: uppercase;
+}
+#catalog-form-form .form-type-file{
+    margin-bottom: 5px;
+}
+#unread_mes{
+    width: 350px;
+    float: right;
+    margin-top: -30px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 28px;
+    text-align: right;
+}
+#unread_mes a{
+    color: red;
+    font-size: 16px;
+}
+#block-catalog-form-profile-link{
+    width: 306px;
+    float: left;
+}
+#reload-captcha{
+    display: block;
+    width: 36px;
+    height: 36px;
+    float: left;
+    background: url("../images/refresh.png") no-repeat;
+    margin: 0 10px;
+}
+.captcha img{
+    float: left;
+}
+.captcha input.error{
+    margin-bottom: -4px;
+}
+.close{
+    float: right;
+}
+#modal_reg{
+    width: 200px;
+    height: 300px;
+}
+.boxes #modal_reg {
+    background-color: #C0C0C0;
+    height: auto;
+    padding: 10px;
+    width: auto;
+}
+.hidden{
+    visibility: hidden;
+}
+#modal_reg{
+    text-align: center;
+    border-radius: 5px;
+}
+#modal_reg a.close{
+    background: url("../images/reply.png") no-repeat;
+    color: #FFFFFF;
+    display: block;
+    font-family: a_futuricabookregular;
+    font-size: 24px;
+    height: 59px;
+    padding: 23px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 166px;
+    margin: 0 auto;
+    float: none;
+}
+#modal_reg span{
+    display: block;
 }

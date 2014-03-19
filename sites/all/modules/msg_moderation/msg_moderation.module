@@ -6,9 +6,57 @@ function msg_moderation_menu() {
         'description' => t('List of messages for moderation'),
         'page callback' => 'drupal_get_form',
         'page arguments' => array('msg_moderation_form'),
-        'access arguments' => array('administer site configuration'),
+        'access arguments' => array('message moderate'),
+    );
+    $items['admin/msg_moderation'] = array(
+        'title callback' => 'count_mod_messages',
+        'description' => t('List of messages for moderation'),
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('msg_moderation_form'),
+        'access arguments' => array('message moderate'),
+        'weight' => 15,
+    );
+    $items['ajax/unread_messages'] = array(
+        'type' => MENU_CALLBACK,
+        'page callback' => 'get_unread_messages',
+        'page arguments' => array(2),
+        'access callback' => TRUE,
+        'access arguments' => array('access content')
     );
     return $items;
+}
+
+function get_unread_messages($uid){
+    $query = db_select('pm_index ', 'p')
+        ->fields('p', array('thread_id'))
+        ->distinct()
+        ->condition('recipient', $uid, '=')
+        ->condition('deleted', '0', '=');
+    $query->condition('is_new ', '1', '=');
+    $result = $query->execute();
+    $count = $result->rowCount();
+    drupal_json_output($count);
+}
+function msg_moderation_permission() {
+    return array(
+        'message moderate' => array(
+            'title' => t('Moderate messages'),
+            'description' => t('Moderate messages'),
+        ),
+    );
+}
+function count_mod_messages(){
+    $time = time();
+    $or = db_or()->condition('time', '', '=')->condition('time', $time, '>');
+    $query = db_select('catalog_msg', 'cm');
+    $query->innerJoin('users', 'u', 'u.uid = cm.author_id');
+    $query->fields('cm');
+    $query->addField('u', 'name', 'author_name');
+    $query->condition('cm.status', '0', '=');
+    $query->condition($or);
+    $result = $query->execute();
+    $count = $result->rowCount();
+    return t('Untested')."($count)";
 }
 
 function msg_moderation_form($form_state) {
@@ -31,15 +79,17 @@ function msg_moderation_form($form_state) {
     $options = array();
     foreach($list as $message)
     {
-        $message['body'] = t('Sender').": ".$message['name']
-//            ."\n".t("Mobile phone").": ".$message['m_phone']
-//            ."\n".t("Home phone").": ".$message['h_phone']
-//            ."\n".t("E-mail").": ".$message['email']
-            ."\n".t("Question").": ".$message['question'];
+        $category = get_category_name($message['tid']);
+        $message['body'] = "<div>".t('Category').": ".$category."</div>"
+            ."<div>".t('Sender').": ".$message['name']."</div>"
+            ."<div>".t('Mobile phone').": ".$message['m_phone']."</div>";
+        $message['body'] .= $message['h_phone'] ? "<div>".t('Home phone').": ".$message['h_phone']."</div>" : '';
+        $message['body'] .= "<div>".t('E-mail').": ".$message['email']."</div>"
+            ."<div>".t("Question").": ".$message['question']."</div>";
         if($message['file'] != ''){
             $file = unserialize($message['file']);
             $file_url = file_create_url($file->uri);
-            $message['body'] .="\n".t("File").": ".l($file->filename, $file_url);
+            $message['body'] .= t("File").": ".l($file->filename, $file_url, array( 'attributes' => array('target' => '_blank')));
         }
         $options[$message['id']] = array
         (
@@ -75,6 +125,14 @@ function msg_moderation_form($form_state) {
 
 }
 
+function get_category_name($tid){
+    $query = db_select('taxonomy_term_data', 't')
+        ->fields('t', array('name'))
+        ->condition('tid', $tid, '=')
+        ->execute()
+        ->fetchCol();
+    return $query['0'];
+}
 function msg_moderation_form_submit($form, &$form_state) {
     foreach($form['table'] as $messages){
         if(isset($messages['#checked']) and $messages['#checked'] == true){
@@ -87,18 +145,16 @@ function msg_moderation_form_submit($form, &$form_state) {
             foreach($conf_messages as $message){
                 $users = unserialize($message['users']);
                 $message['body'] = "</div>".t('Sender').": ".$message['name']."</div>"
-//                    ."\n".t("Mobile phone").": ".$message['m_phone']
-//                    ."\n".t("Home phone").": ".$message['h_phone']
-//                    ."\n".t("E-mail").": ".$message['email']
                     ."\n"."<div>".t("Question").": ".$message['question']."</div>";
                 if($message['file'] != ''){
                     $file = unserialize($message['file']);
                     $file_url = file_create_url($file->uri);
-                    $message['body'] .="\n".t("File").": ".l($file->filename, $file_url);
+                    $message['body'] .="\n".t("File").": ".l($file->filename, $file_url, array( 'attributes' => array('target' => '_blank')));
                 }
+                $theme = mb_substr(trim($message['question']), 0, 8)."..";
                 $author = user_load($message['author_id']);
                 foreach($users as $uid){
-                    $new_message = privatemsg_new_thread(array(user_load($uid)), t('Theme'), $message['body'],
+                    $new_message = privatemsg_new_thread(array(user_load($uid)), $theme, $message['body'],
                         array('author' => $author, 'new' => true));
                     $array_mid[] = array(
                         'mid' => $new_message['message']->mid,
@@ -106,7 +162,8 @@ function msg_moderation_form_submit($form, &$form_state) {
                         'm_phone' => $message['m_phone'],
                         'h_phone' => $message['h_phone'],
                         'author_id' => $message['author_id'],
-                        'recipient_id' => $uid);
+                        'recipient_id' => $uid,
+                        'time' => $message['time']);
                 }
                 guest_reply_insert($array_mid);
             }
@@ -117,7 +174,7 @@ function msg_moderation_form_submit($form, &$form_state) {
     }
 }
 function guest_reply_insert($array_mid){
-    $query = db_insert('guest_reply')->fields(array('mid', 'email', 'm_phone', 'h_phone', 'author_id', 'recipient_id'));
+    $query = db_insert('guest_reply')->fields(array('mid', 'email', 'm_phone', 'h_phone', 'author_id', 'recipient_id', 'time'));
     foreach ($array_mid as $array) {
         $query->values($array);
     }
@@ -185,12 +242,15 @@ function update_br_status($status, $mid){
         ->execute();
 }
 function get_moderated_messages(){
+    $time = time();
+    $or = db_or()->condition('time', '', '=')->condition('time', $time, '>');
     $query = db_select('catalog_msg', 'cm')
         ->extend('PagerDefault');
     $query->innerJoin('users', 'u', 'u.uid = cm.author_id');
     $query->fields('cm');
     $query->addField('u', 'name', 'author_name');
     $query->condition('cm.status', '0', '=');
+    $query->condition($or);
     $result = $query->limit(20)
         ->execute();
     while ($message = $result->fetchassoc()){
@@ -198,4 +258,24 @@ function get_moderated_messages(){
     }
     return isset($messages) ? $messages : '';
 
+}
+function msg_moderation_preprocess_page(&$variables){
+    global $user;
+    if($user->uid){
+        $module_path = drupal_get_path('module', 'msg_moderation');
+        drupal_add_js($module_path . '/js/unread_msg.js', 'file');
+        drupal_add_js(array('uid' => $user->uid), 'setting');
+    }
+    if(arg(0) =='messages' and arg(1) == 'view' and preg_match('/\d{1,10}/', arg(2))){
+        $waiting_time = get_waiting_time(arg(2));
+        drupal_add_js(array('waiting_time' => $waiting_time), 'setting');
+    }
+}
+function get_waiting_time($mid){
+    $query = db_select('guest_reply', 'g')
+        ->fields('g', array('time'))
+        ->condition('mid', $mid)
+        ->execute()
+        ->fetchAssoc();
+    return $query['time'];
 }

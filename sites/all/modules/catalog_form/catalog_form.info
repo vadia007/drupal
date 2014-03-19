@@ -2,3 +2,7 @@ name = Catalog form
 description = Catalog form
 core = 7.x
 package = Ky100
+
+scripts[] = js/catalog_form.js
+scripts[] = js/phone.js
+scripts[] = js/captcha_refresh.js

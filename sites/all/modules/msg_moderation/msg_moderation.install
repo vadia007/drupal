@@ -39,6 +39,10 @@ function msg_moderation_schema()
                 'length' => 1,
                 'default' => '0'
             ),
+            'time' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
         ),
         'primary key' => array('id'),
     );

@@ -43,13 +43,6 @@ function ky100_theme() {
 function ky100_form_alter(&$form, $form_state, $form_id)  {
     global $user;
     if ($form_id == 'user_profile_form'){
-
-        $form['messages'] = array (
-            '#markup' => l(t('Return to personal cabinet'), 'messages'),
-            '#weight' => -1,
-            '#prefix' => '<div>',
-            '#suffix' => '</div>'
-        );
         unset($form['field_pravila']);
         unset($form['field_dannie']);
         unset($form['field_mess_conf']);
@@ -61,5 +54,11 @@ function ky100_form_alter(&$form, $form_state, $form_id)  {
                 '#suffix' => '</div>'
             );
         }
+    }
+    if($form_id == 'catalog_form_form'){
+        $form['refresh'] = array(
+            '#markup' => l('', 'captcha/refresh/catalog_form_form', array('attributes' => array('id' =>'reload-captcha', 'class' => 'p'))),
+            '#weight' => 1,
+        );
     }
 }

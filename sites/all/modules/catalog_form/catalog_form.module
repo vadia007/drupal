@@ -1,7 +1,4 @@
 <?php
-$module_path = drupal_get_path('module', 'catalog_form');
-drupal_add_js($module_path . '/js/catalog_form.js', 'file');
-drupal_add_js($module_path . '/js/phone.js', 'file');
 /**
  * Implements hook_menu().
  */
@@ -18,7 +15,6 @@ function catalog_form_menu() {
 }
 
 function code_load($code) {
-
     $result = db_select('back_response', 'br')
         ->fields('br')
         ->condition('br.code', $code)
@@ -37,7 +33,7 @@ function catalog_form_form($form, &$form_state){
     $form['category'] = array(
         '#type'	=> 'textfield',
         '#title' => t('Category'),
-        '#default_value' => t('Category'),
+        '#default_value' => t('CATEGORY'),
         '#required' => TRUE,
         '#disabled' => TRUE,
         '#attributes' => array('id' => array('cat')),
@@ -56,30 +52,31 @@ function catalog_form_form($form, &$form_state){
     $form['m_phone'] = array(
         '#type'	=> 'textfield',
         '#title' => t('Mobile phone'),
-        '#default_value' => t('Mobile phone'),
+        '#default_value' => t('MOBILE PHONE'),
         '#attributes' => array('id' => array('phone')),
     );
     $form['h_phone'] = array(
         '#type'	=> 'textfield',
         '#title' => t('Home phone'),
-        '#default_value' => t('Home phone'),
+        '#default_value' => t('HOME PHONE'),
         '#attributes' => array('id' => array('h_phone')),
     );
     $form['email'] = array(
         '#type'	=> 'textfield',
         '#title' => t('E-mail'),
-        '#default_value' => t('E-mail'),
+        '#default_value' => t('E-MAIL'),
     );
 
     $form['question'] = array(
         '#type' => 'textarea',
         '#title' => t('Question'),
-        '#default_value' => t('Ask your question'),
+        '#default_value' => t('ASK YOUR QUESTION'),
         '#required' => TRUE,
         '#resizable' => FALSE
     );
     $form['file'] = array(
         '#type' => 'file',
+        '#size' => 53,
     );
     $form['time'] = array(
         '#type' => 'textfield',
@@ -109,6 +106,7 @@ function catalog_form_form($form, &$form_state){
     $form['captcha'] = array(
         '#type' => 'captcha',
         '#captcha_type' => 'image_captcha/Image',
+        '#attributes' => array('id' => array('captcha')),
     );
     $form['submit'] = array(
         '#type' => 'submit',
@@ -153,6 +151,12 @@ function catalog_form_block_info() {
     $blocks['user_links'] = array(
         'info' => t('User links'),
     );
+    $blocks['unread_messages'] = array(
+        'info' => t('Count unread messages'),
+    );
+    $blocks['profile_link'] = array(
+        'info' => t('User profile link'),
+    );
 
     return $blocks;
 }
@@ -178,10 +182,32 @@ function catalog_form_block_view($delta = '') {
             break;
         case 'user_links':
             $block['subject'] = t('Links');
-            $block['content'] = theme('user_links');
+            $block['content'] = user_links();
+            break;
+        case 'unread_messages':
+            $block['subject'] = t('Count unread messages');
+            $block['content'] = count_unread_messages();
+            break;
+        case 'profile_link':
+            $block['subject'] = t('User profile link');
+            $block['content'] = theme('profile_link');
             break;
     }
     return $block;
+}
+function user_links(){
+    global $user;
+    if(current_path() == "user/$user->uid/edit"){
+        $username = '';
+        $userpath = '/messages';
+        $usertext = t('Personal cabinet');
+    }else{
+        $username = $user->name;
+        $userpath = "/user/$user->uid/edit";
+        $usertext = t('Personal data');
+    }
+
+    return theme('user_links', array('name' => $username, 'userpath' => $userpath, 'usertext' => $usertext));
 }
 /**
  * Implements hook_form_validate().
@@ -270,6 +296,7 @@ function catalog_form_form_submit($form, &$form_state) {
             file_save($file);
         }
         $ser_users = serialize($users);
+        $time = $form_state['values']['time'] ? time() + 3600 * $form_state['values']['time'] : '';
         $result = db_insert('catalog_msg')
             ->fields(array(
             'category' => $form_state['values']['category'],
@@ -280,7 +307,7 @@ function catalog_form_form_submit($form, &$form_state) {
             'email' => $form_state['values']['email'],
             'question' => $form_state['values']['question'],
             'file' => $form_state['values']['file'] ? serialize($form_state['values']['file']) : '',
-            'time' => $form_state['values']['time'],
+            'time' => $time,
             'users' => $ser_users,
             'author_id' => $user->uid
         ))
@@ -342,13 +369,13 @@ function catalog_form_mail($key, &$message, $params) {
 }
 
 function confidence($user){
-    $message = t('Confidence for company');
+    $message = t('Confidence for company')." \"".$user->field_naimenovanie['und']['0']['value']."\"";
     if(empty($user->field_name) or empty($user->field_inn) or empty($user->field_ogrn) or empty($user->field_okpo)
         or empty($user->field_okpd) or empty($user->field_uridicheskiy) or empty($user->field_fakticheskiy)
         or empty($user->field_adress) or empty($user->field_phone)){
-        $message .= "<span style='color: red; font-size: 22px'> *</span>";
+        $message .= "<span style='color: red; font-size: 28px'> *</span>";
     }else{
-        $message .= "<span style='color: red; font-size: 22px'> *******</span>";
+        $message .= "<span style='color: red; font-size: 28px'> *******</span>";
     }
     return $message;
 }
@@ -363,9 +390,38 @@ function catalog_form_user_login(&$edit, $account) {
 function message_count(){
     global $user;
     $username = $user->name;
-    return theme('count_message', array('name' => $username));
+    $m_count = get_count_messages($user->uid, false);
+    $client = get_client($user->uid);
+    return theme('count_message', array('name' => $username, 'all' => $m_count, 'client' => $client));
 }
-
+function get_count_messages($uid, $is_new){
+    $query = db_select('pm_index ', 'p')
+        ->fields('p', array('thread_id'))
+        ->distinct()
+        ->condition('recipient', $uid, '=')
+        ->condition('deleted', '0', '=');
+    if($is_new)
+        $query->condition('is_new ', '1', '=');
+    $result = $query->execute();
+    $count = $result->rowCount();
+    return $count;
+}
+function count_unread_messages(){
+    global $user;
+    $count = get_count_messages($user->uid, true);
+    $class = !$count ? 'hidden' : '';
+    $path = base_path() . drupal_get_path('module', 'catalog_form');
+    return theme('unread_messages', array('count' => $count, 'class' => $class, 'path' => $path));
+}
+function get_client($uid){
+    $query = db_select('back_response ', 'br')
+        ->fields('br')
+        ->condition('uid', $uid, '=')
+        ->condition('status', '1', '=');
+    $result = $query->execute();
+    $count = $result->rowCount();
+    return $count;
+}
 /**
  * Implements hook_theme
  */
@@ -374,6 +430,14 @@ function catalog_form_theme() {
     return array(
         'count_message' => array(
             'template' => 'count_message',
+            'path' => $module_path,
+        ),
+        'unread_messages' => array(
+            'template' => 'unread_messages',
+            'path' => $module_path,
+        ),
+        'profile_link' => array(
+            'template' => 'profile_link',
             'path' => $module_path,
         ),
         'user_links' => array(

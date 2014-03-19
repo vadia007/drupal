@@ -93,6 +93,9 @@ drupal_add_js($directory . '/js/search.js', 'file');
             <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" />
         </a>
         <?php endif; ?>
+        <div id="unread_mes">
+            <?php print render($page['header']); ?>
+        </div>
     </div>
 
     <?php if ($main_menu): ?>
@@ -112,24 +115,6 @@ drupal_add_js($directory . '/js/search.js', 'file');
     </div> <!-- /#nav -->
     <?php endif; ?>
 
-    <!--    --><?php //if ($secondary_menu): ?>
-    <!--      <div id="secondary-menu" class="navigation">-->
-    <!--        --><?php //print theme('links__system_secondary_menu', array(
-//          'links' => $secondary_menu,
-//          'attributes' => array(
-//            'id' => 'secondary-menu-links',
-//            'class' => array('links', 'inline', 'clearfix'),
-//          ),
-//          'heading' => array(
-//            'text' => t('Secondary menu'),
-//            'level' => 'h2',
-//            'class' => array('element-invisible'),
-//          ),
-//        )); ?>
-    <!--      </div> <!-- /#secondary-menu -->
-    <!--    --><?php //endif; ?>
-
-
     <?php if ($messages): ?>
     <div id="messages">
         <?php print $messages; ?>
@@ -140,7 +125,7 @@ drupal_add_js($directory . '/js/search.js', 'file');
     <div id="main">
         <div id="main_img">
             <div id="search">
-                <input type="text" value="<?php echo t('Поиск');?>">
+                <input type="text" value="<?php echo t('Search');?>">
                 <a href="catalog">
                     <img src="<?php echo $directory;?>/images/search_button.png" alt="Поиск">
                 </a>
@@ -149,8 +134,8 @@ drupal_add_js($directory . '/js/search.js', 'file');
 
         <div id="sidebar_r">
             <?php print render($page['video']); ?>
-            <a class="about" href="#"><?php print t('О нас');?></a>
-            <a class="support" href="#"><?php print t('Служба поддержки');?></a>
+            <a class="about" href="about"><?php print t('About us');?></a>
+            <a class="support" href="contact"><?php print t('Support service');?></a>
         </div>
     </div>
     <?php endif; ?>
@@ -183,19 +168,27 @@ drupal_add_js($directory . '/js/search.js', 'file');
     </div> <!-- /#content -->
     <?php endif; ?>
 
-    <!--    <div class="empty"></div>-->
 </div> <!-- /#page-wrapper -->
 <div id="footer" >
     <?php if ($is_front): ?>
-    <a id="catalog" href="catalog"><?php print t('Каталог');?></a>
+    <a id="catalog" href="catalog"><?php print t('Catalog');?></a>
     <?php
     global $user;
     if (!in_array('authenticated user', $user->roles)){ ?>
-        <a class="sign_in" href="user/login"><?php print t('Вход / Регистрация');?></a>
+        <a class="sign_in" href="user/login"><?php print t('Sign in / Registration');?></a>
         <?php } else {?>
         <a class="sign_in" href="messages"><?php print t('Profile');?></a>
         <?php } endif; ?>
 
 </div><!-- /#footer -->
-
-
+<?php if($_GET['q'] == 'user/register'):?>
+<div class="boxes">
+    <div id="modal_reg" class="window">
+<span>
+    <?php print t('Registration only for legal entities and individual entrepreneurs, organizations and companies');?>
+</span>
+        <a href="#" class="close"><?php print t('Ok');?></a>
+    </div>
+</div>
+<div class="mask"></div>
+<?php endif;?>
