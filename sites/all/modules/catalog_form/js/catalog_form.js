@@ -17,6 +17,13 @@ jQuery(function ($) {
         $("#hidden").val(tid);
         $("#cat").val(cat);
     });
+    // Wrap user profile fields.
+    $('#edit-field-naimenovanie, #edit-field-category, #edit-field-name, #edit-field-uridicheskiy,' +
+        ' #edit-field-fakticheskiy, #user-profile-form .form-item-mail, #edit-privatemsg').wrapAll('<div id="left-col"></div>');
+    $('#edit-field-inn, #edit-field-ogrn, #edit-field-okpo, #edit-field-okpd, #edit-field-adress,' +
+        '#edit-field-phone, #user-profile-form .form-item-current-pass, #user-profile-form .form-item-pass,' +
+        '#user-profile-form #edit-actions').wrapAll('<div id="right-col"></div>');
+
     if ($("div").is(".captcha")) {
         $("#reload-captcha").appendTo(".form-item-captcha-response .field-prefix");
     } else {
@@ -136,4 +143,5 @@ jQuery(function ($) {
         });
 
     }
+
 });

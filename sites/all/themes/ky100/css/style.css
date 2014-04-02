@@ -578,9 +578,9 @@ div.grippie{
     display: none;
 }
 div#privatemsg-list-form table.privatemsg-list{
-    width: 444px;
-    height: 314px;
-    background: url("../images/message-list.png") no-repeat;
+    width: 751px;
+    height: 303px;
+    background: url("../images/message_list.png") no-repeat;
     overflow: auto;
     display: block;
     float: left;
@@ -605,9 +605,9 @@ div#privatemsg-list-form th{
     border: none;
 }
 div#message-list{
-    width: 444px;
-    height: 314px;
-    background: url("../images/message-list.png") no-repeat;
+    width: 751px;
+    height: 303px;
+    background: url("../images/message_list.png") no-repeat;
     overflow-x: hidden;
     overflow-y: auto;
     display: block;
@@ -744,8 +744,7 @@ span.count{
 #block-catalog-form-user-links{
     width: 306px;
     display: block;
-    float: right;
-    margin-top: 35px;
+    float: left;
     height: 346px;
 }
 a.links{
@@ -783,20 +782,17 @@ div.tabs{
     margin-bottom: 7px;
 }
 
-#register-form .form-wrapper, #register-form .form-item,
-#user-profile-form .form-wrapper, #user-profile-form .form-item{
+#register-form .form-wrapper, #register-form .form-item{
     float: left;
     width: 100%;
 }
-#register-form .form-wrapper label,
-#user-profile-form .form-wrapper label{
+#register-form .form-wrapper label{
     float: left;
     width: 235px;
     text-align: left;
     font-family: arial;
 }
-#register-form .description,
-#user-profile-form .description{
+#register-form .description{
     width: 500px;
     float: right;
     margin-bottom: 5px;
@@ -839,7 +835,7 @@ td.privatemsg-list-date{
 }
 #user-profile-form{
     float: right;
-    width: 700px;
+    width: 810px;
 }
 #user-profile-form input[type="text"],
 #user-profile-form input[type="email"],
@@ -860,24 +856,11 @@ td.privatemsg-list-date{
     text-align: justify;
     margin: 7px 0;
 }
-#user-profile-form div.password-confirm,
-#user-profile-form div.password-strength{
-    float: right;
-    margin: 5px auto;
-    width: 370px;
-}
-#user-profile-form fieldset.form-wrapper{
-    width: 335px;
-    margin: 0 auto 15px 235px;
-    padding: 0;
-}
+
 #user-profile-form input.element-invisible{
     display: inline;
     width: 0;
     height: 0;
-}
-#user-profile-form .shs-select{
-    float: left;
 }
 #user-profile-form .form-actions{
     text-align: center;
@@ -1036,4 +1019,104 @@ div#block-catalog-form-catalog-form input[type="text"]#h_phone{
 }
 #modal_reg span{
     display: block;
+}
+#user-profile-form input[type="text"],
+#user-profile-form input[type="password"],
+#user-profile-form select{
+    width: 170px;
+    float: right;
+}
+
+#right-col{
+    float: right;
+    width: 405px;
+}
+#left-col{
+    float: left;
+    width: 405px;
+}
+#user-profile-form label{
+    display: block;
+    float: left;
+    width: 190px;
+    font-size: 13px;
+    text-align: right;
+    padding-right: 10px;
+}
+#left-col div,
+#right-col div{
+    width: 100%;
+    float: right;
+}
+#user-profile-form .shs-select{
+    float: right;
+    width: 190px;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+#user-profile-form div.field-type-text{
+    height: 30px;
+}
+#user-profile-form div.field-type-taxonomy-term-referencet{
+    height: 58px;
+}
+#edit-field-naimenovanie label{
+    margin-top: 0;
+}
+#user-profile-form .form-item-mail .description{
+    width: 317px;
+    font-size: 12px;
+    font-family: arial;
+}
+#user-profile-form .form-item-current-pass .description{
+    width: 335px;
+    font-size: 12px;
+    font-family: arial;
+}
+#user-profile-form .password-indicator{
+    width: 240px;
+    float: left;
+}
+#user-profile-form .password-strength-title{
+    width: 240px;
+    float: left;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+#user-profile-form .password-strength-text{
+    float: right;
+    width: 100px;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 11px;
+}
+#user-profile-form fieldset{
+    border: none;
+    padding: 0;
+}
+#user-profile-form fieldset legend{
+    display: none;
+}
+#user-profile-form fieldset .form-type-checkbox{
+    width: 317px;
+    float: right;
+    margin-left: 85px;
+}
+#user-profile-form fieldset .form-type-checkbox label{
+    width: 89%;
+    padding: 0;
+    text-align: justify;
+    display: block;
+    text-align: left;
+}
+#user-profile-form .checkbox{
+    padding-right: 10px;
+}
+#user-profile-form .form-item-pass .description{
+    display: none!important;
+}
+#user-profile-form div.password-confirm,
+#user-profile-form div.password-strength{
+    font-size: 13px;
+    width: 370px;
 }
