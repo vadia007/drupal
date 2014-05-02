@@ -14,6 +14,10 @@ function msg_moderation_schema()
                 'type' => 'varchar',
                 'length' => 255,
             ),
+            'name' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
             'email' => array(
                 'type' => 'varchar',
                 'length' => 255,
@@ -84,6 +88,34 @@ function msg_moderation_schema()
             'recipient_id' => array(
                 'type' => 'varchar',
                 'length' => 10,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+
+    $schema['basket'] = array(
+
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+            ),
+            'mid' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'uid' => array(
+                'type' => 'varchar',
+                'length' => 255,
+            ),
+            'marked' => array(
+                'type' => 'varchar',
+                'length' => 1,
+                'default' => '0'
+            ),
+            'basket' => array(
+                'type' => 'varchar',
+                'length' => 1,
+                'default' => '0'
             ),
         ),
         'primary key' => array('id'),

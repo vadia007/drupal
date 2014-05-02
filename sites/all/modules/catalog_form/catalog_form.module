@@ -125,12 +125,15 @@ function guest_reply_form($form, &$form_state){
         '#title' => t('Message'),
         '#default_value' => t('Your message'),
         '#required' => TRUE,
-        '#resizable' => FALSE
+        '#resizable' => FALSE,
+        '#attributes' => array('form' => array('guest-reply-form')),
+        '#wysiwyg' => false,
     );
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => t('Send Message'),
+        '#value' => t('Send'),
         '#submit' => array('guest_reply_form_submit'),
+        '#attributes' => array('form' => array('guest-reply-form')),
 
     );
     return $form;
@@ -157,7 +160,9 @@ function catalog_form_block_info() {
     $blocks['profile_link'] = array(
         'info' => t('User profile link'),
     );
-
+    $blocks['category_banner'] = array(
+        'info' => t('Category banner'),
+    );
     return $blocks;
 }
 /**
@@ -192,22 +197,86 @@ function catalog_form_block_view($delta = '') {
             $block['subject'] = t('User profile link');
             $block['content'] = theme('profile_link');
             break;
+        case 'category_banner':
+            $block['subject'] = t('Category banner');
+            $block['content'] = get_category_banner();
+            break;
     }
     return $block;
 }
+function get_category_banner(){
+    global $user;
+    $user_object = user_load($user->uid);
+    foreach($user_object->field_category['und'] as $category){
+        $parent = taxonomy_get_parents($category['tid']);
+        if(empty($parent)){
+            $parent[$user->uid] = taxonomy_term_load($category['tid']);
+        }
+        if(!empty($parent[$user->uid]->field_category_baner) and $parent[$user->uid]->field_category_baner['und']['0']['uri'] != ''){
+            $img_uris[] = $parent[$user->uid]->field_category_baner['und']['0']['uri'];
+
+        }
+    }
+    if(!empty($img_uris)){
+        $count = count($img_uris);
+        $random = rand(0, $count-1);
+        $img_uri = $img_uris[$random];
+    }else{
+        $field = field_info_field('field_category_baner');
+        if (!empty($field) && $field['settings']['default_image'] > 0) {
+            $default_img_fid  = $field['settings']['default_image'];
+            $default_img_file = file_load($default_img_fid);
+            $img_uri = $default_img_file->uri;
+        }
+    }
+
+    $vars = array(
+        'path' => $img_uri,
+        'alt' => t('Banner'),
+        'attributes' => array('class' => 'category-banner'),
+    );
+    return theme_image($vars);
+}
 function user_links(){
     global $user;
+
     if(current_path() == "user/$user->uid/edit"){
         $username = '';
         $userpath = '/messages';
         $usertext = t('Personal cabinet');
     }else{
+        $user_params = user_load($user->uid);
+        if(!empty($user_params->field_user_picture)){
+            $img_uri = $user_params->field_user_picture['und']['0']['uri'];
+        } else {
+            $field = field_info_field('field_user_picture');
+            if (!empty($field) && $field['settings']['default_image'] > 0) {
+                $default_img_fid  = $field['settings']['default_image'];
+                $default_img_file = file_load($default_img_fid);
+                $img_uri = $default_img_file->uri;
+            }
+        }
+        $vars = array(
+            'path' => $img_uri,
+            'alt' => t('User picture'),
+            'attributes' => array('class' => 'user-picture'),
+            'style_name' => 'user_picture',
+        );
+        $img = theme(
+            'image_style',
+            $vars
+        );
         $username = $user->name;
         $userpath = "/user/$user->uid/edit";
         $usertext = t('Personal data');
-    }
 
-    return theme('user_links', array('name' => $username, 'userpath' => $userpath, 'usertext' => $usertext));
+        return theme('user_links', array(
+            'name' => $username,
+            'userpath' => $userpath,
+            'usertext' => $usertext,
+            'img' => $img
+        ));
+    }
 }
 /**
  * Implements hook_form_validate().

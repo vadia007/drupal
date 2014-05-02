@@ -125,16 +125,16 @@ drupal_add_js($directory . '/js/search.js', 'file');
     <div id="main">
         <div id="main_img">
             <div id="search">
-                <input type="text" value="<?php echo t('Search');?>">
-                <a href="catalog">
-                    <img src="<?php echo $directory;?>/images/search_button.png" alt="Поиск">
-                </a>
+<!--                <input type="text" value="--><?php //echo t('Search');?><!--">-->
+<!--                <a href="catalog">-->
+<!--                    <img src="--><?php //echo $directory;?><!--/images/search_button.png" alt="Поиск">-->
+<!--                </a>-->
             </div>
         </div>
 
         <div id="sidebar_r">
             <?php print render($page['video']); ?>
-            <a class="about" href="about"><?php print t('About us');?></a>
+<!--            <a class="about" href="about">--><?php //print t('About us');?><!--</a>-->
             <a class="support" href="contact"><?php print t('Support service');?></a>
         </div>
     </div>
@@ -192,3 +192,6 @@ drupal_add_js($directory . '/js/search.js', 'file');
 </div>
 <div class="mask"></div>
 <?php endif;?>
+
+
+

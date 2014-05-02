@@ -17,6 +17,7 @@ regions[video] = Video
 settings[shortcut_module_link] = 0
 
 scripts[] = js/checkbox.js
+scripts[] = js/tinyscrollbar.js
 
 ; Information added by  packaging script on 2013-11-20
 version = "7.24"

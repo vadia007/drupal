@@ -75,7 +75,8 @@ function _privatemsg_action_form($type) {
  * AJAX callback to return the form again.
  */
 function privatemsg_list_js($form, $form_state) {
-    return $form['updated'];
+//    return $form['updated'];
+    return '<script type="text/javascript"> location.replace("/messages"); </script>';
 }
 
 function privatemsg_delete($form, $form_state, $thread, $message) {
@@ -172,12 +173,16 @@ function privatemsg_list($form, &$form_state, $argument, $account) {
 
     // Load the themed list headers based on the available data.
     $headers = _privatemsg_list_headers($columns);
-    $t =  t('Received messages');
+//    $text = "<div id='head-buttons'>
+//    <span id='input-msg'>" . t('Input messages') . "</span>
+//    <span id='output-msg'>" . t('Output messages') . "</span>
+//    <span id='basket'>" . t('Basket') . "</span>
+//    <span id='marked-messages'>" .t('Marked') . "</span></div>";
     $form = array(
         '#list_argument' => $argument,
         '#submit' => array('privatemsg_list_submit'),
         'updated' => array(
-            '#prefix' => "<span id='received_msg'>$t</span>".'<div id="privatemsg-list-form">',
+            '#prefix' =>  '<div id="privatemsg-list-form">',
             '#suffix' => '</div>',
         ),
     );

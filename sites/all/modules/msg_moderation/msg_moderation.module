@@ -16,16 +16,89 @@ function msg_moderation_menu() {
         'access arguments' => array('message moderate'),
         'weight' => 15,
     );
-    $items['ajax/unread_messages'] = array(
+    $items['ajax/unread_messages/%'] = array(
         'type' => MENU_CALLBACK,
         'page callback' => 'get_unread_messages',
         'page arguments' => array(2),
         'access callback' => TRUE,
         'access arguments' => array('access content')
     );
+    $items['ajax/set_marked_messages'] = array(
+        'type' => MENU_CALLBACK,
+        'page callback' => 'update_marked_messages',
+        'access callback' => TRUE,
+        'access arguments' => array('access content')
+    );
+    $items['ajax/get_marked_messages/%'] = array(
+        'type' => MENU_CALLBACK,
+        'page callback' => 'get_marked_messages',
+        'page arguments' => array(2),
+        'access callback' => TRUE,
+        'access arguments' => array('access content')
+    );
+    $items['ajax/put_in_basket'] = array(
+        'type' => MENU_CALLBACK,
+        'page callback' => 'put_in_basket',
+        'access callback' => TRUE,
+        'access arguments' => array('access content')
+    );
+    $items['ajax/get_basket/%'] = array(
+        'type' => MENU_CALLBACK,
+        'page callback' => 'get_basket',
+        'page arguments' => array(2),
+        'access callback' => TRUE,
+        'access arguments' => array('access content')
+    );
     return $items;
 }
-
+function get_marked_messages($uid){
+    $query = db_select(' basket ', 'b')
+        ->fields('b', array('mid'))
+        ->condition('uid', $uid, '=')
+        ->condition('marked', '1', '=');
+    $result = $query->execute();
+    while ($id = $result->fetchCol()){
+        $array_id[] = $id;
+    }
+    drupal_json_output($array_id);
+}
+function get_basket($uid){
+    $query = db_select(' basket ', 'b')
+        ->fields('b', array('mid'))
+        ->condition('uid', $uid, '=')
+        ->condition('basket', '1', '=');
+    $result = $query->execute();
+    while ($id = $result->fetchCol()){
+        $array_id[] = $id;
+    }
+    drupal_json_output($array_id);
+}
+function put_in_basket(){
+    if (isset($_POST['delete_id']) and $_POST['delete_id'] != ''){
+        global $user;
+        db_update('basket')
+            ->fields(array('basket' => '1',))
+            ->condition ('mid', $_POST['delete_id'], 'IN')
+            ->condition ('uid', $user->uid, '=')
+            ->execute();
+    }
+}
+function update_marked_messages(){
+    global $user;
+    if (isset($_POST['checked']) and isset($_POST['id'])){
+        marked_update($_POST['checked'], $_POST['id'], $user->uid);
+    }
+//    if (isset($_POST['not_selected_id']) and $_POST['not_selected_id'] != ''){
+//        marked_update('0', $_POST['not_selected_id'], $user->uid);
+//    }
+}
+function marked_update($marked, $mid, $uid){
+    db_update('basket')
+        ->fields(array('marked' => $marked,))
+        ->condition ('mid', $mid, '=')
+        ->condition ('uid', $uid, '=')
+        ->execute();
+}
 function get_unread_messages($uid){
     $query = db_select('pm_index ', 'p')
         ->fields('p', array('thread_id'))
@@ -151,21 +224,40 @@ function msg_moderation_form_submit($form, &$form_state) {
                     $file_url = file_create_url($file->uri);
                     $message['body'] .="\n".t("File").": ".l($file->filename, $file_url, array( 'attributes' => array('target' => '_blank')));
                 }
-                $theme = mb_substr(trim($message['question']), 0, 8)."..";
+                if(mb_strlen($message['question'],'UTF-8') > 32){
+                    $theme = mb_substr(trim($message['question']), 0, 32)."..";
+                }else{
+                    $theme = trim($message['question']);
+                }
                 $author = user_load($message['author_id']);
                 foreach($users as $uid){
-                    $new_message = privatemsg_new_thread(array(user_load($uid)), $theme, $message['body'],
-                        array('author' => $author, 'new' => true));
-                    $array_mid[] = array(
-                        'mid' => $new_message['message']->mid,
-                        'email' => $message['email'],
-                        'm_phone' => $message['m_phone'],
-                        'h_phone' => $message['h_phone'],
-                        'author_id' => $message['author_id'],
-                        'recipient_id' => $uid,
-                        'time' => $message['time']);
+                    $user_object = user_load($uid);
+                    if(empty($user_object->field_remove_from_search) or !$user_object->field_remove_from_search['und']['0']['value']){
+                        $new_message = privatemsg_new_thread(array(user_load($uid)), $theme, $message['body'],
+                            array('author' => $author, 'new' => true));
+                        $array_mid[] = array(
+                            'mid' => $new_message['message']->mid,
+                            'name' => $message['name'],
+                            'email' => $message['email'],
+                            'm_phone' => $message['m_phone'],
+                            'h_phone' => $message['h_phone'],
+                            'author_id' => $message['author_id'],
+                            'recipient_id' => $uid,
+                            'time' => $message['time']);
+                        $basket[] = array(
+                            'mid' => $new_message['message']->mid,
+                            'uid' => $uid
+                        );
+                        $basket[] = array(
+                            'mid' => $new_message['message']->mid,
+                            'uid' => $author->uid
+                        );
+                    }
                 }
-                guest_reply_insert($array_mid);
+                if(isset($basket))
+                    basket_insert($basket);
+                if(isset($array_mid))
+                    guest_reply_insert($array_mid);
             }
             update($selected, '1');
         }else{
@@ -173,8 +265,15 @@ function msg_moderation_form_submit($form, &$form_state) {
         }
     }
 }
+function basket_insert($basket){
+    $query = db_insert('basket')->fields(array('mid', 'uid'));
+    foreach ($basket as $array) {
+        $query->values($array);
+    }
+    $query->execute();
+}
 function guest_reply_insert($array_mid){
-    $query = db_insert('guest_reply')->fields(array('mid', 'email', 'm_phone', 'h_phone', 'author_id', 'recipient_id', 'time'));
+    $query = db_insert('guest_reply')->fields(array('mid', 'name', 'email', 'm_phone', 'h_phone', 'author_id', 'recipient_id', 'time'));
     foreach ($array_mid as $array) {
         $query->values($array);
     }

@@ -1,3 +1,8 @@
+<?php if(isset($img)): ?>
+<span id="user-picture">
+    <?php print $img; ?>
+</span>
+<?php endif; ?>
 <span id="name">
     <?php print $name;?>
 </span>

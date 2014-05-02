@@ -56,6 +56,7 @@ a:focus {
 h1{
     color: #B9B9B8;
     text-align: right;
+    margin-top: 5px;
 }
 input[type="submit"]:hover{
     cursor: pointer;
@@ -579,47 +580,39 @@ div.grippie{
 }
 div#privatemsg-list-form table.privatemsg-list{
     width: 751px;
-    height: 303px;
-    background: url("../images/message_list.png") no-repeat;
-    overflow: auto;
     display: block;
     float: left;
+    padding-top: 7px;
+    padding-left: 4px;
 }
 div#privatemsg-list-form input[type='checkbox']{
     display: inline;
 }
-div#privatemsg-list-form .checkbox{
-    background: none;
-    float: none;
-    display: none;
-}
+
 div#privatemsg-list-form tr{
-    background: none;
-    border: none;
+    /*background: none;*/
     padding: 0;
 }
 div#privatemsg-list-form tbody{
     border: none;
+    /*background: url("../images/message_list_back.png") repeat-y 0 300px;*/
 }
 div#privatemsg-list-form th{
     border: none;
+
 }
 div#message-list{
-    width: 751px;
-    height: 303px;
-    background: url("../images/message_list.png") no-repeat;
+    width: 752px;
+
     overflow-x: hidden;
-    overflow-y: auto;
     display: block;
     float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 table.sticky-header{
     display: none;
-}
-div.privatemsg-message-column{
-    width: 88%;
-    padding-right: 10px;
-    word-wrap: break-word;
 }
 #message-list p{
     font-size: 14px;
@@ -667,21 +660,25 @@ ul.primary{
     /*display: none;*/
 }
 #block-catalog-form-message-counter{
-    width: 300px;
+    width: 760px;
     padding-left: 15px;
-    float: left;
-    margin-right: 40px;
+    float: right;
+    margin-right: 39px;
+    margin-bottom: 20px;
 }
 #privatemsg-list{
     /*width: 535px;*/
 }
 span#name{
-    display: block;
+    display: table-cell;
     text-transform: uppercase;
     color: #000;
     font-family: a_futuricabookregular;
-    font-size: 24px;
-    text-align: center;
+    font-size: 20px;
+    text-align: left;
+    width: 180px;
+    padding-left: 35px;
+    vertical-align: middle;
 }
 #logout{
     display: block;
@@ -694,6 +691,7 @@ span#name{
     height: 59px;
     padding-top: 23px;
     padding-left: 114px;
+
 }
 span.counter{
     display: block;
@@ -701,24 +699,26 @@ span.counter{
     color: #fff;
     font-family: a_futuricabookregular;
     background: url("../images/count_msg.png") no-repeat;
-    font-size: 13px;
-    width: 277px;
-    height: 27px;
+    font-size: 14px;
+    width: 223px;
+    height: 26px;
     text-align: center;
-    padding-top: 11px;
-    margin: 15px auto;
+    padding-top: 7px;
+    float: left;
+    margin-right: 4px;
 }
 span.count{
     display: block;
     color: #000;
     font-family: a_futuricabookregular;
-    font-size: 36px;
+    font-size: 26px;
     background: url("../images/count.png") no-repeat;
-    height: 48px;
-    width: 168px;
-    margin: 0 auto;
+    height: 33px;
+    width: 147px;
     text-align: right;
-    letter-spacing: 12px;
+    letter-spacing: 13px;
+    float: left;
+    margin-right: 4px;
 }
 .count > span{
     margin-right: -5px;
@@ -738,14 +738,15 @@ span.count{
     padding-top: 12px;
 }
 #privatemsg-list{
-    width: 444px;
+    width: 777px;
     float: left;
+    margin-left: 40px;
 }
 #block-catalog-form-user-links{
     width: 306px;
     display: block;
     float: left;
-    height: 346px;
+    height: 285px;
 }
 a.links{
     display: block;
@@ -758,9 +759,7 @@ a.links{
     height: 59px;
     padding-top: 23px;
     text-align: center;
-}
-div.container-inline{
-    display: none;
+    clear: both;
 }
 
 .shs-select{
@@ -805,9 +804,15 @@ div.tabs{
     line-height: 21px;
 }
 .privatemsg-message-participants{
-    margin-top: 8px;
-    float: right;
-    width: 95%;
+    margin-top: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 50px;
+    line-height: 30px;
+    background: #c1c1c1;
+    margin-left: 6px;
+    width: 320px;
+    float: left;
 }
 #privatemsg-list .privatemsg-list th{
     padding-top: 7px;
@@ -829,10 +834,7 @@ td.privatemsg-list-subject{
     width: 38%;
     height: 30px;
 }
-td.privatemsg-list-date{
-    width: 27%;
-    padding-right: 7px;
-}
+
 #user-profile-form{
     float: right;
     width: 810px;
@@ -871,18 +873,21 @@ td.privatemsg-list-date{
 }
 table.privatemsg-list thead{
     width: 100%;
+    display: none;
 }
 td.empty{
     width: 444px;
     text-align: center;
+}
+.privatemsg-list td.privatemsg-list-participants{
+    display: none;
 }
 #guest-reply-form .form-submit{
     display: block;
     margin: 0 auto;
 }
 #privatemsg-new{
-    width: 450px;
-    float: left;
+    display: none;
 }
 #privatemsg-new fieldset{
     display: none;
@@ -934,11 +939,7 @@ div#block-catalog-form-catalog-form input[type="text"]#h_phone{
 }
 .privatemsg-header-subject,
 .privatemsg-list-subject{
-    padding-left: 17px;
-}
-#privatemsg-list .form-type-checkbox,
-#privatemsg-list th input.form-checkbox{
-    display: none;
+    padding-left: 7px;
 }
 #time_left{
     display: block;
@@ -969,13 +970,16 @@ div#block-catalog-form-catalog-form input[type="text"]#h_phone{
     width: 306px;
     float: left;
 }
-#reload-captcha{
+.form-item-captcha-response #reload-captcha{
     display: block;
     width: 36px;
     height: 36px;
     float: left;
     background: url("../images/refresh.png") no-repeat;
     margin: 0 10px;
+}
+#reload-captcha{
+    display: none;
 }
 .captcha img{
     float: left;
@@ -1053,6 +1057,40 @@ div#block-catalog-form-catalog-form input[type="text"]#h_phone{
     width: 190px;
     margin-bottom: 4px;
     margin-top: 0;
+    clear: right;
+}
+.field-multiple-drag{
+    display: none;
+}
+#left-col .field-multiple-table{
+    float: right;
+    width: 100%;
+}
+#left-col .field-multiple-table label{
+    text-transform: uppercase;
+    font-weight: normal;
+    display: block;
+    float: left;
+    font-size: 13px;
+    padding-right: 10px;
+    text-align: right;
+    width: 190px;
+}
+#left-col .field-multiple-table tbody{
+    display: block;
+    float: right;
+    margin-top: -20px;
+    width: 190px;
+}
+#left-col .field-multiple-table thead{
+    display: block;
+    margin-top: 5px;
+}
+#left-col .field-multiple-table tbody label{
+    display: none;
+}
+#user-profile-form .shs-select.shs-select-level-2{
+    float: right;
 }
 #user-profile-form div.field-type-text{
     height: 30px;
@@ -1119,4 +1157,441 @@ div#block-catalog-form-catalog-form input[type="text"]#h_phone{
 #user-profile-form div.password-strength{
     font-size: 13px;
     width: 370px;
+}
+.hide{
+    display: none;
+}
+#privatemsg-list .container-inline{
+    display: none;
+}
+#input-msg,
+#output-msg,
+#basket,
+#marked-messages{
+    display: block;
+    background: url("../images/input_msg.png") no-repeat;
+    width: 185px;
+    height: 50px;
+    float: left;
+    margin-right: 4px;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 11px;
+    cursor: pointer;
+}
+#head-buttons{
+    float: left;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    width: 760px;
+}
+.head-buttons{
+    float: left;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    width: 760px;
+}
+#head-buttons #head-buttons{
+    display: none;
+}
+.privatemsg-list .thread{
+    height: 30px;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #B3B3B3;
+}
+table.privatemsg-list{
+    table-layout: fixed;
+}
+.privatemsg-list-subject a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 7px 0 0 6px;
+}
+.privatemsg-list td{
+    width: 22px;
+    display: block;
+    float: left;
+    height: 24px;
+    padding-top: 6px;
+    overflow: hidden;
+    font-family: a_futuricabookregular;
+    padding-left: 7px;
+    background: #bebebe;
+}
+td.privatemsg-list-user{
+    width: 158px;
+    background: none;
+}
+td.privatemsg-list-subject{
+    width: 368px;
+    min-width: 0;
+    background: none;
+    padding: 0;
+}
+.privatemsg-list-subject .marker{
+    display: none;
+}
+td.privatemsg-list-date{
+    width: 183px;
+    min-width: 0;
+    padding: 0;
+    height: 30px;
+    background: none;
+}
+.privatemsg-list-date .date{
+    font-size: 12px;
+    display: block;
+    width: 110px;
+    text-align: center;
+    float: left;
+    height: 23px;
+    padding-top: 7px;
+    background: #bebebe;
+}
+.privatemsg-list-date .time{
+    font-size: 12px;
+    display: block;
+    width: 73px;
+    text-align: center;
+    float: left;
+    padding-top: 6px;
+}
+tr.thread td{
+    padding-bottom: 0;
+}
+.privatemsg-list tbody{
+    padding-top: 10px;
+}
+.thread:first-child{
+    /*border-top: 1px solid #969696;*/
+}
+.privatemsg-list tr.thread.selected{
+    background: #C2C2C2;
+}
+tr.selected td {
+    background: none;
+}
+span.marked{
+    display: block;
+    float: right;
+    margin-top: -6px;
+    border-width: 8px 5px 5px;
+    border-color: #BEBEBE #BEBEBE rgba(0, 0, 0, 0);
+    border-style: solid;
+    cursor: pointer;
+}
+span.marked:hover{
+    border-top-width: 15px;
+}
+span.marked.checked{
+    border-top-width: 15px;
+    border-color: #C00100 #C00100 rgba(0, 0, 0, 0);
+}
+.date-time{
+    /*width: 153px;*/
+    /*padding-right: 15px;*/
+    /*float: right;*/
+    /*background: #C1C1C1;*/
+    /*line-height: 30px;*/
+    /*margin: 20px 0;*/
+    /*text-align: right;*/
+    /*font-size: 14px;*/
+    /*text-transform: uppercase;*/
+    display: none;
+}
+
+#block-catalog-form-guest-reply{
+    display: none;
+}
+#edit-body-value,
+#edit-message{
+    background: none;
+    border: 2px solid #5b5b5b;
+    margin: 20px 15px;
+    padding:10px;
+    height: 100px;
+    width: 687px;
+}
+div#privatemsg-list-form .checkbox{
+    background: url("../images/msg_checkbox.png") no-repeat;
+}
+#buttons{
+    float: right;
+    width: 600px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 105px;
+}
+#buttons input[type="submit"],
+#buttons a{
+    background: url("../images/btn_send.png") no-repeat;
+    display: block;
+    float: left;
+    width: 193px;
+    height: 51px;
+    font-size: 21px;
+    color: #fff;
+    font-family: a_futuricabookregular;
+    text-align: center;
+    text-transform: uppercase;
+}
+#buttons a{
+    padding-top: 12px;
+    height: 39px;
+    cursor: pointer;
+}
+#delete.hide,
+input#edit-delete.hide{
+    display: none;
+}
+input#edit-delete{
+    margin: 0;
+    padding: 0;
+}
+div.privatemsg-message-body{
+    word-wrap: break-word;
+    margin: 0 15px;
+    background: #c1c1c1;
+    padding: 0 31px;
+    float: left;
+    clear: both;
+    width: 660px;
+}
+.privatemsg-author-name,
+.privatemsg-message-information ul.privatemsg-message-actions{
+    display: none;
+}
+.privatemsg-message-date{
+    display: block;
+    background: #c1c1c1;
+    float: right;
+    font-size: 14px;
+    line-height: 30px;
+    margin: 20px 0;
+    padding-right: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 153px;
+    color: #000000;
+}
+.privatemsg-output .privatemsg-message-date{
+    background: #d9dad9;
+}
+.privatemsg-output .privatemsg-message-body{
+    background: #d9dad9;
+}
+div.privatemsg-message-information{
+    border: none;
+    margin: 0;
+}
+#privatemsg-list #head-buttons{
+    margin-left: 0;
+}
+td.empty{
+    width: 100%;
+    margin-left: 200px;
+}
+#edit-field-category input[type="submit"]{
+    background: url("../images/add_cat.png") no-repeat;
+    width: 187px;
+    height: 50px;
+    float: right;
+    font-size: 15px;
+    margin-bottom: 7px;
+    color: #fff;
+    padding-bottom: 7px;
+
+}
+#field-category-values th{
+    border: none;
+}
+.tabledrag-toggle-weight-wrapper{
+    display: none;
+}
+#user-register-form .field-multiple-table tbody{
+    float: right;
+    display: block;
+    margin-right: 63px;
+}
+#user-register-form .field-multiple-table thead{
+    display: block;
+    float: left;
+    margin-top: 10px;
+}
+#user-register-form .field-multiple-table thead label{
+    font-weight: normal;
+    font-size: 14px;
+}
+#user-register-form .field-multiple-table{
+    width: 100%;
+}
+#user-register-form .field-multiple-table tbody label{
+    display: none;
+}
+#user-register-form .field-add-more-submit{
+    margin-right: 130px;
+}
+#user-register-form .ajax-progress{
+    float: left;
+}
+span.privatemsg-message-new{
+    display: none;
+}
+#block-catalog-form-category-banner{
+    width: 306px;
+    float: left;
+    clear: left;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 45px;
+    overflow: hidden;
+}
+#block-catalog-form-category-banner + #block-system-main #head-buttons{
+    margin-top: -240px;
+}
+#block-catalog-form-category-banner + #block-system-main #privatemsg-list{
+    margin-top: -185px;
+}
+.view-display-id-catalog_parent{
+    width: 830px;
+    float: left;
+}
+#block-block-3{
+    float: right;
+    width: 300px;
+    margin-bottom: 10px;
+}
+#block-block-3 p,
+#block-block-4 p{
+    margin: 0;
+}
+#left-col div.form-type-checkbox{
+    margin-left: 85px;
+    text-align: left;
+    width: 327px;
+}
+#left-col div.form-type-checkbox label{
+    width: 288px;
+    text-align: left;
+}
+#block-block-4{
+    float: right;
+    width: 300px;
+}
+.view-display-id-catalog_child .views-field-name .field-content{
+    display: block;
+    float: left;
+    width: auto;
+    padding-right: 5px;
+    max-width: 250px;
+    word-wrap: break-word;
+}
+.view-display-id-catalog_child .views-field-name .online {
+    display: block;
+    float: left;
+    font-size: 9px;
+    text-transform: none;
+    height: 20px;
+    margin-top: -3px;
+    color: #fff;
+}
+#user-picture{
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 15px;
+}
+#edit-field-user-picture label{
+    font-weight: normal;
+    text-transform: uppercase;
+}
+#edit-field-user-picture .form-managed-file {
+    width: 190px;
+    float: right;
+    overflow: hidden;
+}
+#edit-field-user-picture input[type="submit"] {
+    background: url("../images/add_cat.png") no-repeat;
+    color: #FFFFFF;
+    float: right;
+    font-size: 15px;
+    height: 50px;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    width: 187px;
+}
+#edit-field-user-picture .description{
+    width: 300px;
+    margin-top: 0;
+    font-size: 12px;
+}
+#edit-field-user-picture .file,
+#edit-field-user-picture .file-size{
+    font-size: 12px;
+}
+.viewport {
+    width: 752px;
+    height: 336px;
+    overflow: hidden;
+    position: relative;
+    background: url("../images/message_list.png") no-repeat;
+}
+table.privatemsg-list {
+    list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0;
+}
+.scrollbar{
+    background: transparent url(../images/scrollbar-track.png) no-repeat 0 0; position: relative;
+    background-position: 0 0;
+    float: right;
+    width: 18px;
+    height: 335px;
+}
+.track {
+    /*background: transparent url(../images/scrollbar-track-end.png) no-repeat 0 100%;*/
+    /*height: 100%;*/
+    width:13px;
+    position: relative;
+    padding: 0 1px;
+}
+.thumb {
+    background: transparent url(../images/scrollbar-thumb.png) no-repeat 50% 100%;
+    height: 20px;
+    width: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: -3px;
+}
+.thumb .end {
+    /*background: transparent url(../images/scrollbar-thumb.png) no-repeat 50% 0;*/
+    overflow: hidden;
+    height: 5px;
+    width: 25px;
+}
+.disable {
+    display: none;
+}
+.scrollbar-y{
+    width: 778px;
+    float: left;
+    margin-left: 40px;
+    margin-top: -185px;
+}
+#head-buttons .dis,
+#buttons .dis{
+    color: #bbbbbb;
+    cursor: default;
+}
+#cat.chosen{
+    color: #7bb918;
 }
